@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-main(){
+main (){
     int horas, minutos, segundos;
 
     printf("Digite as horas iniciais: ");
@@ -15,7 +15,5 @@ main(){
 
     int proximoSegundo = horas * 3600 + minutos * 60 + segundos + 1;
 
-    printf("%d horas, %d minutos e %d segundos", proximoSegundo/3600, (proximoSegundo/3600 / 60), proximoSegundo % 60);
-    
-    return 0;
+    printf("%d horas, %d minutos e %d segundos", proximoSegundo / 3600, (proximoSegundo % 3600) / 60 , (proximoSegundo % 3600) % 60);
 }
