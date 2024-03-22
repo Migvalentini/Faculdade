@@ -10,9 +10,17 @@ int main () {
     // lista 2 de comandos;
     // }
 
-    // E = &&
-    // OU = ||
-    // NEGAÇÃO = !
+    // OPERADORES RELACIONAIS
+    // IGUAL ==
+    // DIFERENTE !=
+    // MAIOR >
+    // MAIOR IGUAL >=
+    // MENOR <
+    // MENOR IGUAL <=
+
+    // E &&
+    // OU ||
+    // NEGAÇÃO !
     
     return 0;
 }
