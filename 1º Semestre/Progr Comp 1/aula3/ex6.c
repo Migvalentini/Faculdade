@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main () {
+int main () {
     int n1,n2,n3,n4,n5,n6,soma=0;
 
     printf("Digite o primeiro numero: ");
@@ -35,5 +35,7 @@ main () {
         soma+=n6;
     }
 
-    printf("%d",soma);
+    printf("A soma dos numeros pares eh %d",soma);
+
+    return 0;
 }

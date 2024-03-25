@@ -1,6 +1,6 @@
-#include <stdio.h>;
+#include <stdio.h>
 
-main () {
+int main () {
    int numero,dig1,dig2,dig3,dig4,dig5;
 
    printf("Digite o numero: ");
