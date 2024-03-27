@@ -2,16 +2,17 @@
 
 int main () 
 {
-   int x=0;
+   // int array[5];
 
-   // for (int x=0; x < 10; x++) {
-   //    printf("%d\n",x);
+   // for (int x=0; x < 5; x++) {
+   //    array[x] = x;
+   //    printf("%d\n",array[x]);   
    // }
 
-   do {
-      printf("%d\n",x);
-      x++;
-   } while (x < 10);
+   // do {
+   //    printf("%d\n",x);
+   //    x++;
+   // } while (x < 10);
 
    return 0;
 }
