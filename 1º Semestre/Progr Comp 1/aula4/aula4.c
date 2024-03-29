@@ -2,17 +2,14 @@
 
 int main () 
 {
-   // int array[5];
+   // fflush(stdin) = limpeza do buffer do teclado, stdin = buffer de entrada (std=standard=padr]ao / in=entrada)
+   // getchar ou getch = função de atribuição para a variável
 
-   // for (int x=0; x < 5; x++) {
-   //    array[x] = x;
-   //    printf("%d\n",array[x]);   
-   // }
+   // printf("%dX.Y") 
+   //X = indica quantos digitos inteiros devem ser mostrados
+   //Y = quantas casas decimais devem ser mostradas
 
-   // do {
-   //    printf("%d\n",x);
-   //    x++;
-   // } while (x < 10);
+   // Buffer do teclado = memoria do teclado para armazenar o que é digitado
 
    return 0;
-}
+}  
