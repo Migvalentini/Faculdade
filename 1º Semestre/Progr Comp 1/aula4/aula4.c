@@ -11,8 +11,8 @@ int main ()
    // operador=getchar();
 
    // printf("%dX.Y") 
-   //X = indica quantos digitos inteiros devem ser mostrados
-   //Y = quantas casas decimais devem ser mostradas
+   // X = indica quantos digitos inteiros devem ser mostrados
+   // Y = quantas casas decimais devem ser mostradas
 
    return 0;
 }  

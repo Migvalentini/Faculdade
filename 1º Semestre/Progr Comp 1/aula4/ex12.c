@@ -13,7 +13,7 @@ int main () {
    printf("Digite a nota 3: ");
    scanf("%f",&n3);
 
-   printf("Digite o tipo de calculo: ");
+   printf("Digite o tipo de calculo a ser realizado: ");
    fflush(stdin);
    calculo=getchar();
 
