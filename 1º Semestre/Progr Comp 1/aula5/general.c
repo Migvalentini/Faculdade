@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main () {
+int main () {
      int a, b, c, d, e;
     printf("Digite cinco numeros inteiros entre 1 e 6, correspondentes ao arremesso de 5 dados no jogo do general, em ordem crescente:\n");
     scanf("%d%d%d%d%d",&a,&b,&c,&d,&e);
@@ -14,4 +14,5 @@ main () {
                     printf("Os valores formam um full-hand.\n");
                 else
                     printf("Nenhuma das combinacoes acima.\n");
+    return 0;
 }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main () {
+int main () {
     int codigo,horasTrabalhadas,valorHora,filhos,idade,tempoServico,valorSalario,salarioBruto,salarioLiquido,salarioFamilia,descontoINSS,impostoRenda,adicional=0;
 
     printf("Digite o codigo do colaborador: ");
@@ -13,9 +13,9 @@ main () {
     scanf("%d",&filhos);
     printf("Digite a idade: ");
     scanf("%d",&idade);
-    printf("Digite o tempo de serviço do colaborador: ");
+    printf("Digite o tempo de servico do colaborador: ");
     scanf("%d",&tempoServico);
-    printf("Digite o valor do salário família por filho: ");
+    printf("Digite o valor do salario familia por filho: ");
     scanf("%d",&valorSalario);
 
     salarioBruto = horasTrabalhadas * valorHora;
@@ -39,6 +39,8 @@ main () {
         impostoRenda = salarioBruto * 0.275;
     }
 
+    adicional+=salarioFamilia;
+    
     if (idade > 40) {
         adicional = adicional + salarioBruto * 0.02;
     }
@@ -52,4 +54,6 @@ main () {
     salarioLiquido = salarioBruto - descontoINSS - impostoRenda + adicional;
 
     printf("\nNumero do colaborador: %d\nSalario Bruto: %d\nTotal de Descontos: %d\nAdicional: %d\nSalario Liquido: %d",codigo,salarioBruto,descontoINSS+impostoRenda,adicional,salarioLiquido);
+
+    return 0;
 }

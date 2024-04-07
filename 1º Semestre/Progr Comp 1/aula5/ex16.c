@@ -1,11 +1,12 @@
 #include <stdio.h>
 
-main () {
+int main () {
     int matricula;
     float n1,n2,n3,n4,media,aux;
 
-    printf("Digite a matricula: ");
-    scanf("%d",&matricula);
+    // printf("Digite a matricula: ");
+    // scanf("%d",&matricula);
+    matricula=123;
 
     printf("Digite a nota 1: ");
     scanf("%f",&n1);
@@ -30,19 +31,17 @@ main () {
       n3=aux;
     }
 
-    media=3/((1/n1)+(1/n2)+(1/n3));
-
-    if (n1 != 0 || n2 != 0 || n3 != 0) {
-        printf("matricula: %d\nMedia: %.1f\n",matricula,media);
+    if (n1 > 0 && n2 > 0 && n3 > 0) {
+        media=3/((1/n1)+(1/n2)+(1/n3));
+        printf("Matricula: %d\nMedia: %.1f\n",matricula,media);
     }
-    printf("");
+
     if (media<6) {
-        printf("matricula: %d\nMedia: %.1f\n",matricula,media);
         if (3/((1/10)+(1/n2)+(1/n3))) {
             printf("Digite a 4 nota: ");
             scanf("%f",&n4);
             media=3/((1/n4)+(1/n2)+(1/n3));
-            printf("matricula: %d\nMedia: %.1f\n",matricula,media);
+            printf("Matricula: %d\nMedia: %.1f\n",matricula,media);
         }
     }
 
@@ -56,5 +55,7 @@ main () {
         printf("Conceito: 1");
     } else {
         printf("Conceito: 0");
-    } 
+    }
+
+    return 0;
 }
