@@ -1,0 +1,4 @@
+Miguel: 2.0;
+Diego: 5.0;
+Aline: 8.0;
+Media Geral: 5.0;
