@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main () {
+int main () {
     int menorNumero, x;
     
     printf("Digite um numero: ");
@@ -17,4 +17,6 @@ main () {
     }
 
     printf("Menor numero: %d",menorNumero);
+
+    return 0;
 }
