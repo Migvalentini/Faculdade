@@ -1,27 +1,33 @@
 #include <stdio.h>
 
-main() {
-   int num,n, palindromo,mult=1;
+int main() {
+   int num, n, palindromo,mult=1,aux,aux2;
 
-   printf("digite um numero inteiro ate 100.000.000: ");
+   printf("Digite um numero inteiro ate 100.000.000: ");
    scanf("%d",&num);
 
-   n=num;
+   aux=num;
+   aux2=num;
 
-   while(n>0) {
-      palindromo+=(n%10)*mult;
-      n/=10;
+   while(aux>0) {
       mult*=10;
+      aux/=10;
    }
 
    mult/=10;
 
-   // while() {
-      
-   // }
+   while(num>0) {
+      n=num%10;
+      palindromo+=n*mult;
+      mult/=10;
+      num=num/10;
+   }
 
-   printf("%d\n",palindromo/mult);
+   if(palindromo==aux2) {
+      printf("O numero %d eh palindromo",aux2);
+   } else {
+      printf("O numero %d nao eh palindromo",aux2);
+   }
 
-   printf("Palindromo: %d",palindromo);
-   printf("Mult: %d",mult);
+   return 0;
 }
