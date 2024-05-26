@@ -1,6 +1,16 @@
+// Desenvolva um programa que implemente uma calculadora de 4 operações. 
+// O programa deve solicitar que o usuário informe três dados: o primeiro operando, o operador (+,-,*,/) e o segundo operando. 
+// O programa deve mostrar na tela a operação e seu resultado.
+// Em duas situações, o programa não deverá efetuar o cálculo:
+// - Se o operador informado pelo usuário for inválido mostrar a mensagem “Operador inválido” e encerrar a execução do programa
+// - Se o segundo operando for igual a 0 (zero) e o operador escolhido for a divisão (/), mostrar na tela a mensagem “Divisão por Zero!” e encerrar a execução do programa.
+// Para encerrar o programa é utilizada a função exit(). 
+// A função exit() está incluída na biblioteca stdlib.
+// A variável que identifica a operação deve ser declarada com o tipo char. 
+
 #include <stdio.h>
 
-int main () {
+int main() {
    float n1,n2;
    char operador;
 
@@ -37,4 +47,6 @@ int main () {
    if (operador=='/' && n2==0) {
       printf("Divisao por Zero");
    }
+
+   return 0;
 }

@@ -1,6 +1,16 @@
+// Desenvolva um programa que leia três valores inteiros que correspondam ao dia, mês e ano e mostre na tela data correspondente ao dia seguinte. 
+// Lembrem-se que abril, junho, setembro e novembro tem 30 dias, fevereiro tem 28 (29 em ano bissexto) e todos os outros meses tem 31 dias. 
+// Para saber se um ano é bissexto: 
+// Se o ano for divisível por 4, vá para a etapa 2. Caso contrário, vá para a etapa 5.
+// Se o ano for divisível por 100, vá para a etapa 3. Caso contrário, vá para a etapa 4.
+// Se o ano for divisível por 400, vá para a etapa 4. Caso contrário, vá para a etapa 5.
+// O ano é bissexto (ela tem 366 dias).
+// O ano não é um ano bissexto (ela tem 365 dias).
+// Exemplo: Se o usuário digitar dia=28, mês=2  e ano=2016, o programa deverá mostrar na tela a data do próximo dia: 29/02/2016.   
+
 #include <stdio.h> 
 
-int main () {
+int main() {
     int dia,mes,ano;
 
     printf("Digite o dia: ");
@@ -31,7 +41,8 @@ int main () {
         dia=1;
         mes=1;
         ano++;
-    } 
+    }
+    
     printf("Dia seguinte: %d/%d/%d",dia,mes,ano);
 
     return 0;

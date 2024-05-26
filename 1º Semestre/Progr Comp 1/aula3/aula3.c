@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main () {
+int main() {
     // if (condição)
     // {
     // lista 1 de comandos;

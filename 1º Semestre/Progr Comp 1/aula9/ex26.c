@@ -1,6 +1,10 @@
-#include <stdio.h>
-main(){
+// Desenvolva um programa em C que solicite ao usuário informar 6 valores inteiros, correspondentes a duas datas, cada uma formada por dia, mês e ano. 
+// O programa em C deverá mostrar na tela todas as datas entre as duas, incluindo a data inicial e a data final. 
+// O programa em C deve considerar os anos bissextos
 
+#include <stdio.h>
+
+int main() {
    int ano,mes,dia,anof,mesf,diaf,bissexto;
    printf("Informe o dia inicial: ");
    scanf("%d",&dia);
@@ -19,34 +23,39 @@ main(){
 
    while(1){
       dia++;
-      if (dia==32&&(mes==1||mes==3||mes==5||mes==7||mes==8||mes==10)){
+      if (dia==32&&(mes==1||mes==3||mes==5||mes==7||mes==8||mes==10)) {
          dia=1;
          mes++;
       }
-      else if (dia==31&&(mes==4||mes==6||mes==9||mes==11)){
+      else if (dia==31&&(mes==4||mes==6||mes==9||mes==11)) {
          dia=1;
          mes++;
          }
-      else if (dia==32&&mes==12){
-               dia=1;
-               mes=1;
-               ano++;
+      else if (dia==32&&mes==12) {
+         dia=1;
+         mes=1;
+         ano++;
          }
-         else if(dia==29&&mes==2){
-                  bissexto=0;
-                  if (ano%4==0)
-                     if (ano%100==0){
-                           if (ano%400==0)
-                              bissexto=1;
-                     }
-                     else 
-                           bissexto=1;
-                  if (bissexto==0){
-                     dia=1;
-                     mes=3;
-                  }
+      else if(dia==29&&mes==2) {
+         bissexto=0;
+         if (ano%4==0) {
+            if (ano%100==0) {
+               if (ano%400==0)
+                  bissexto=1;
+            } else {
+               bissexto=1;
+            }
+         }
+         if (bissexto==0){
+            dia=1;
+            mes=3;
+         }
       }
       printf("%d/%d/%d\n",dia,mes,ano);
-      if (dia==diaf&&mes==mesf&&ano==anof) break;
+      if (dia==diaf&&mes==mesf&&ano==anof) {
+         break;
+      }
    }
+
+   return 0;
 }

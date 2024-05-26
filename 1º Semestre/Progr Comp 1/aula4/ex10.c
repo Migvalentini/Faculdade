@@ -1,6 +1,12 @@
+// Desenvolva um programa que solicite o usuário informar um número de 8 dígitos. 
+// O programa deve verificar se este número é palíndromo, ou seja,  se a leitura da direita para a esquerda é igual a leitura da esquerda para a direita. 
+// Após a verificação, o programa deverá mostrar na tela uma mensagem se o número é ou não palíndromo. 
+// Exemplo: se o usuário informar o 25344351, o programa deverá verificar que o primeiro número é igual ao oitavo, o segundo igual ao sétimo e o terceiro igual ao sexto número. 
+// Dica para desenvolver este programa: divida o número por múltiplos de 10 e vá pegando o quociente e resto da divisão para separar os 8 dígitos do número. 
+
 #include <stdio.h>
 
-int main () {
+int main() {
    int num,n1,n2,n3,n4,n5,n6,n7,n8,resto;
 
    printf("Digite um numero: ");

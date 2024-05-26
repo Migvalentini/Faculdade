@@ -1,7 +1,7 @@
-#include <stdio.h>; 
-#include <math.h>;
+#include <stdio.h>
+#include <math.h>
 
-main() {
+int main() {
   // Variáveis
   
   int x;
@@ -9,4 +9,6 @@ main() {
   char sexo;
   
   printf("Hello World!");
+
+  return 0;
 }

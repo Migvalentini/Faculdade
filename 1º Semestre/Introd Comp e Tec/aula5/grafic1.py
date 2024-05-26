@@ -1,3 +1,5 @@
+# Uso da biblioteca matplotlib para gerar o gráfico da função x²+1
+
 import matplotlib.pyplot as plt
 
 x=[]

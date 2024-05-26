@@ -1,7 +1,7 @@
-#include <stdio.h>; 
-#include <math.h>;
+#include <stdio.h>
+#include <math.h>
 
-main() {
+int main() {
   // Operadores Matemáticos
   // Soma +
   // Subtração -
@@ -25,4 +25,6 @@ main() {
   printf("%d\n", z);
   printf("%d + %d = %d\n", x,y,z);
   scanf("%d%d",&x,&y);
+
+  return 0;
 }

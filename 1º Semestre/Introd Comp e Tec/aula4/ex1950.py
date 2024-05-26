@@ -1,3 +1,5 @@
+# Faça um algoritmo que escreva os 50 primeiros números primos.
+
 num = 0
 x = 0
 cont = 0

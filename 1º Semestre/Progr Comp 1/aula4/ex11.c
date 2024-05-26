@@ -1,6 +1,14 @@
+// Desenvolva um programa que solicite ao usuário informar dois números inteiros de três dígitos cada um. 
+// O programa deverá verificar se os dois números possuem os mesmos dígitos. 
+// Após a verificação, o programa deverá mostrar na tela uma mensagem se os números possuem os mesmos dígitos. 
+// Exemplos: 
+// Se o usuário informar os números 469 e 694, o programa deve mostrar uma mensagem que os dígitos dos dois números são os mesmos. 
+// Se o usuário informar os números 221 e 112,  o programa deve mostrar uma mensagem que os dígitos dos dois números são diferentes. 
+// Neste exemplo, de ambos terem somente os dígitos 1 e 2, o dígito 2 aparece duas vezes no primeiro número e o dígito 1 aparece duas vezes no segundo número. 
+
 #include <stdio.h>
 
-int main () {
+int main() {
    int n1,n2,d11,d12,d13,d21,d22,d23,resto,aux;
 
    printf("Digite o numero 1: ");
@@ -56,8 +64,6 @@ int main () {
    } else {
       printf("Os numeros NAO possuem os mesmos digitos");
    }
-
-   printf("\nn1: %d ,n2: %d ,d11: %d ,d12: %d ,d13: %d ,d21: %d ,d22: %d ,d23: %d ",n1,n2,d11,d12,d13,d21,d22,d23);
 
    return 0;
 }

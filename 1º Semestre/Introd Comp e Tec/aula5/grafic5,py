@@ -1,3 +1,5 @@
+# Uso da biblioteca matplotlib para gerar um exemplo simples de gráfico de barras duplas verticais
+
 import matplotlib.pyplot as plt
 import numpy as np
 grupos = 5

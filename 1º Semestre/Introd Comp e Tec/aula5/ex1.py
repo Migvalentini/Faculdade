@@ -1,11 +1,19 @@
-dados = [(1, 10), (2, 20), (3, 30), (4, 40)]
+# Escrever um programa que leia diversas amostras de cobaias utilizadas em uma experiência. 
+# Esta experiência trabalha com 4 tipos de cobaias: 1= ratos 2= coelhos 3= aranhas 4=cobras. 
+# Para cada amostra, o programa deverá solicitar o tipo de cobaia que está sendo utilizada, a quantidade de animais utilizadas na amostra. 
+# A entrada de dados será encerrada quando for digitado 0 no tipo da cobaia.
+# Armazenar a quantidade de cobaias em uma lista. 
+# No final do programa deverão ser mostrados na tela, o total de cobaias utilizadas, o total de coelhos, de ratos, de aranhas e de cobras, a percentagem de cada tipo de animal. 
+# Além disso, devem se gerado gráfico de barras mostrando o total de cada tipo de animal e um gráfico em forma de pizza mostrando a percentagem de cada tipo de animal.
 
-# while True:
-#    tipo = int(input("Digite o tipo da cobaia (1 - rato, 2 - coelho, 3 - aranha, 4 - cobra): "))
-#    if tipo == 0:
-#       break
-#    quantidade = int(input("Digite a quantidade de cobaias: "))
-#    dados.append((tipo, quantidade))
+dados = []
+
+while True:
+   tipo = int(input("Digite o tipo da cobaia (1 - rato, 2 - coelho, 3 - aranha, 4 - cobra): "))
+   if tipo == 0:
+      break
+   quantidade = int(input("Digite a quantidade de cobaias: "))
+   dados.append((tipo, quantidade))
    
 print(dados)
 

@@ -1,3 +1,5 @@
+# Uso da biblioteca matplotlib para gerar um exemplo simples de gráfico de histograma
+
 import matplotlib.pyplot as plt
 from random import random
 from math import sqrt

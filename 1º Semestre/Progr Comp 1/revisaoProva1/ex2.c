@@ -1,6 +1,12 @@
+// Fazer um algoritmo que a partir de quatro medidas de temperatura (números com casas decimais), escreva a temperatura média (aritmética simples), 
+// considerando as duas temperaturas intermediárias, ou seja, desconsiderar a maior e a menor das quatro temperaturas lidas. 
+// Exemplo: para as temperaturas: 7,0 30,2 -5,2 18,4 escreve: 12,7
+// Dica: Uma possível solução é colocar as temperaturas em ordem e considerar a 2ª e a 3ª.
+// Outra seria determinar a maior e a menor temperatura, calcular a soma de todas e subtraindo a maior e a menor, para então calcular a média.
+
 #include <stdio.h>
 
-int main () {
+int main() {
    float t1,t2,t3,t4,aux;
 
    printf("Digite a temperatura 1: ");

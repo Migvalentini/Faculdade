@@ -1,3 +1,6 @@
+# Faça um algoritmo que leia o código e a votação de cada um dos candidatos a uma vaga no senado, até que o código digitado seja 0 (não deverá ser lida a votação neste caso). 
+# O algoritmo deve escrever os códigos e as votações dos dois senadores eleitos (assuma que não haverão três candidatos com igual votação e que seja a maior votação).
+
 cod1,vot1,cod2,vot2 = 0,0,0,0
 
 cod = int(input("Digite o código do candidato: "))

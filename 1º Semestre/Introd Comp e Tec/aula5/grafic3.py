@@ -1,3 +1,5 @@
+# Uso da biblioteca matplotlib para gerar um exemplo simples de gráfico de barras verticais
+
 import matplotlib.pyplot as plt
 y = [3, 10, 7, 5, 3, 4.5, 6, 8.1]
 N = len(y)

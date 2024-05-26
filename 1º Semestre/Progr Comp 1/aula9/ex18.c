@@ -1,6 +1,9 @@
+// Desenvolva um programa em C que solicite ao usuário informar um número inteiro qualquer. 
+// O programa em C deve verificar se o número possui algum dígito repetido, mostrando na tela uma mensagem informando se o número contém ou não dígitos repetidos. 
+
 #include <stdio.h>
 
-main() {
+int main() {
    int num,n,a1=0,a2=0,a3=0,a4=0,a5=0,a6=0,a7=0,a8=0,a9=0,a0=0;
 
    printf("Digite um numero inteiro: ");
@@ -39,4 +42,6 @@ main() {
    } else {
       printf("O numero possui digitos repetidos");
    }
+
+   return 0;
 }

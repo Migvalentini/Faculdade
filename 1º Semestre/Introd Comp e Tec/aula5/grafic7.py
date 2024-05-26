@@ -1,3 +1,5 @@
+# Uso da biblioteca matplotlib para gerar um exemplo simples de gráfico de pizzas
+
 import matplotlib.pyplot as plt
 labels = ['Grêmio', 'Palmeiras', 'Santos', 'São Paulo']
 titulos = [27, 22, 22, 22]

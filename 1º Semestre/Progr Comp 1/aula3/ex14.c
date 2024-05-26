@@ -1,7 +1,15 @@
+// Desenvolva um programa que solicite o usuário informar a altura em metros e o sexo de uma pessoa. 
+// O programa deverá calcular o peso ideal da pessoa, utilizando as seguintes fórmulas:
+// - Para Homens: ( 72.7 * altura ) - 58
+// - Para Mulheres: ( 62.1 * altura) – 44.7
+// A altura da pessoa é um valor real. 
+// O sexo da pessoa deverá ser identificado através de um caracter. 
+// O programa deverá aceitar os caracteres “m” ou “M” para identificar pessoas do sexo masculino e  os caracteres “f” ou “F” para identificar pessoas do sexo feminino. 
+// A variável que identifica o sexo deve ser declarada com o tipo char.
+
 #include <stdio.h>
 
-int main () 
-{
+int main() {
    char sexo;
    float altura;
 

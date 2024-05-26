@@ -1,3 +1,6 @@
+// Um número piramidal é um número que é igual à soma de 3 números primos consecutivos (ex: 15 = 3 + 5 + 7).
+// Desenvolva um programa em C que leia um valor N e escreva os 10 primeiros números piramidais maiores ou iguais a N.
+
 #include <stdio.h>
 
 int main() {
@@ -8,7 +11,6 @@ int main() {
    scanf("%d",&n);
 
    while(cont<10) {
-      //printf("%d\n",n);
       p1=0;
       p2=0;
       p3=0;

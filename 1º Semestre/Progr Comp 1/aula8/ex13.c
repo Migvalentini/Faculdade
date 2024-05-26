@@ -1,28 +1,26 @@
+// Um número perfeito é o número que é igual à soma de seus divisores, exceto o próprio número. 
+// Por exemplo, o número 6 é perfeito pois a soma dos seus divisores 1 + 2 + 3, exceto 6, é igual a 6.
+// Desenvolva um programa em C que solicite ao usuário informar dez (10) valores inteiros. 
+// O programa em C deve verificar quais os números são perfeitos e mostrar esta informação na tela. 
+
 #include <stdio.h>
 
 int main() {
-   int num, div1, div2, x, y, z;
+   int num, somaDiv=0;
+   
+   for(int x = 1; x <= 10; x++) {
+      printf("Digite o numero %d: ",x);
+      scanf("%d",&num);
 
-   printf("Digite um numero par: "); scanf("%d",&num);
-
-   for(x = 1; x <= num; x++) {
-      div1=0;
-      for(y = 1; y <= x; y++) {
-         if(x%y==0) {
-            div1++;
+      somaDiv=0;
+      for(int y = 1; y <= num; y++) {
+         if(num%y==0) {
+            somaDiv+=y;
          }
       }
-      if(div1==2) {
-         div2=0;
-         for(z=1; z <= num-x; z++) {
-            if((num-x)%z==0) {
-               div2++;
-            }
-         }
-         if(div2==2) {
-            printf("Primo 1 = %d\nPrimo 2 = %d",x,num-x);
-            break;
-         }
+      somaDiv-=num;
+      if(somaDiv == num) {
+         printf("O numero %d eh um numero perfeito\n",num);
       }
    }
 

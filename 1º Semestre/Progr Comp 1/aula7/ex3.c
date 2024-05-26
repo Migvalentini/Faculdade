@@ -1,6 +1,9 @@
-#include <stdio.h>>
+// Desenvolva um programa em C que solicite ao usuário informar 20 números inteiros. 
+// O programa em C deverá mostrar na tela o menor número digitado e a quantidade de números que são iguais a este número.
 
-main () {
+#include <stdio.h>
+
+int main() {
    int x,num,menor,cont;
 
    for (x=1;x<=20;x++) {
@@ -21,4 +24,6 @@ main () {
    }
 
    printf("Menor: %d\nQauntidade Menor: %d",menor,cont);
+
+   return 0;
 }

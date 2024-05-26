@@ -1,6 +1,10 @@
+// Desenvolva um programa que solicite ao usuário digitar seis números inteiros. 
+// O programa deverá somar os valores pares informados e mostrar o resultado desta soma na tela.  
+// Exemplo: se o usuário informar os números 21, 15, 43, 34, -7 e 120 deverá ser mostrado na tela a mensagem  “A soma dos números pares digitados é 154.”
+
 #include <stdio.h> 
 
-int main () {
+int main() {
    int n1,n2,n3,n4,n5,n6,somaPares=0;
 
    printf("Digite o primeiro numero: ");
@@ -41,4 +45,6 @@ int main () {
    }
 
    printf("A soma de numeros pares eh: %d",somaPares);
+
+   return 0;   
 }

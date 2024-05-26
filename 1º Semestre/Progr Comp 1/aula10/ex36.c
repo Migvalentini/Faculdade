@@ -1,3 +1,6 @@
+// Desenvolva um programa em C que calcule e mostre na tela a soma dos 100 primeiros termos da sequência x/1 + x/3 + x/5 + x/7 + x/9 ...
+// , onde o x deve ser um valor inteiro informado pelo usuário no início do programa em C.
+
 #include <stdio.h>
 
 int main() {

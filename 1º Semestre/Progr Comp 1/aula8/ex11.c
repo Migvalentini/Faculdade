@@ -1,11 +1,13 @@
 #include <stdio.h>
 
 int main() {
-   int n, div;
+   int x, n, div, cont=0;
 
-   printf("Digite N: "); scanf("%d",&n);
+   printf("Digite N: "); 
+   scanf("%d",&n);
 
-   for(int x = n; x >= 1; x--) {
+   x=n;
+   while(cont==0) {
       div=0;
       for(int y = 1; y <= x; y++) {
          if(x%y==0) {
@@ -13,9 +15,10 @@ int main() {
          }
       }
       if(div==2) {
-         printf("Maior numero primo menor que %d = %d",n,x);
-         break;
+         printf("Menor numero primo maior que %d = %d",n,x);
+         cont=1;
       }
+      x++;
    }
 
    return 0;

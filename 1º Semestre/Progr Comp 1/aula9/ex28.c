@@ -1,3 +1,7 @@
+// Desenvolva um programa em C que que solicite ao usuário informar 3 valores inteiros, correspondentes ao dia e mês de uma data e o dia da semana que esta data ocorre. 
+// O dia da semana informado deverá ser um número que pertença ao intervalo 1 a 7, onde 1-domingo, 2-segunda, 3-terça, 4-quarta, 5-quinta, 6-sexta, 7-sábado.  
+// O programa em C deverá encontrar e mostrar na tela o nome do dia da semana correspondente ao primeiro dia do mês digitado.
+
 #include <stdio.h>
 
 int main() {

@@ -1,6 +1,10 @@
+// O índice de massa corporal (IMC) de uma pessoa é dada pela relação peso/altura2. 
+// Desenvolva um programa em C que solicite ao usuário informar valores reais que correspondam ao peso e a altura de 10 pessoas. 
+// O programa em C deverá mostrar o peso, a altura e o IMC da pessoa de maior IMC.
+
 #include <stdio.h>
 
-main () {
+int main() {
     int x;
     float peso,altura,imc,pesoMaior,alturaMaior,imcMaior;
 
@@ -26,4 +30,6 @@ main () {
     }
 
     printf("Maior Peso: %.2f - Maior Altura: %.2f - vIMC: %d",pesoMaior,alturaMaior,imcMaior);
+
+    return 0;
 }

@@ -1,3 +1,5 @@
+# Uso da biblioteca matplotlib para gerar o gráfico das funções seno e cosseno
+
 import matplotlib.pyplot as plt
 import math
 import cmath
@@ -16,7 +18,7 @@ while True:
    z.append(cmath.cos(vlr))
 
 plt.plot(x,y,'r+-',x,z,'bo-')
-plt.title("Gráfico das funções seno(x) e cosseno (x)")
+plt.title("Gráfico das funções seno(x) e cosseno(x)")
 plt.xlabel("Eixo das abscissas")
 plt.ylabel("Eixo das ordenadas")
 plt.show()

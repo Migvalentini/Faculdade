@@ -1,6 +1,10 @@
+// Desenvolva um programa que solicite ao usuário digitar quatro números inteiros. 
+// O programa deverá mostrar na tela os 3 (três) maiores valores em ordem crescente.
+// Exemplo: se o usuário informar os números 24, 15, 43 e 34 deverá ser mostrado na tela a mensagem “Números em ordem crescente: 24, 34 e 43”.
+
 #include <stdio.h> 
 
-int main () {
+int main() {
    int n1,n2,n3,n4,aux;
 
    printf("Digite o primeiro numero: ");
@@ -46,7 +50,7 @@ int main () {
       n4=aux;
    }
 
-   printf("%d %d %d",n1,n2,n3);
+   printf("%d %d %d %d",n1,n2,n3,n4);
 
    return 0;
 }

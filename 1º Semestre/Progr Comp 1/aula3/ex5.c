@@ -1,6 +1,10 @@
+// Desenvolva um programa que solicite ao usuário digitar seis números inteiros. 
+// O programa deverá contar e mostrar na tela a quantidade de valores ímpares informados. 
+// Exemplo: se o usuário informar os números 21, 15, 43, 34, -7 e 120 deverá ser mostrado na tela a mensagem  “Foram informados  4 números ímpares.”
+
 #include <stdio.h>
 
-int main () {
+int main() {
     int n1,n2,n3,n4,n5,n6,cont=0;
 
     printf("Digite o primeiro numero: ");
