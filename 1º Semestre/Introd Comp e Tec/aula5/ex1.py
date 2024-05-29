@@ -57,6 +57,6 @@ titulos = [porcentagem_ratos, porcentagem_coelhos, porcentagem_aranhas, porcenta
 cores = ['gray', 'brown', 'darkgray', 'green']
 total = sum(titulos)
 plt.pie(titulos, labels=labels, colors=cores, autopct=lambda p: '{:.0f}'.format(p * total / 100), shadow=True, startangle=90)
-# Determina que as proporções sejam iguais ('equal') de modo a desenhar o círculo
+
 plt.axis('equal')
 plt.show()
