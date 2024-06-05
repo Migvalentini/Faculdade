@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 int main() {
-   int termos,x,exp,fat=1,soma=0;
+   int termos,x,exp=1,fat=1,soma=0;
 
    printf("Digite o numero de termos: ");
    scanf("%d",&termos);
@@ -13,17 +13,21 @@ int main() {
    scanf("%d",&x);
 
    for(int i=0; i<termos; i++) {
-      for(int z=) {
-
+      exp=x;
+      for(int z=i; z>0; z--) {
+         exp*=x;
       }
-      for(int y=x; y>0; y--) {
-         fat*=y;
-      }
+      printf("I: %d\n",i=1);
+      // for(int y=1; y<i; y++) {
+      //    fat*=y;
+      //    printf("Y: %d\n",y);
+      // }
+      printf("%d/%d \n",exp,fat);
       if(i%2==0) {
-         soma-=(x*x)/fat;
+         soma-=(exp)/fat;
       }
       if(i%2==1) {
-         soma+=(x*x)/fat;
+         soma+=(exp)/fat;
       }
    }
 
