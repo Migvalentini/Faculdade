@@ -8,11 +8,14 @@ sg.theme('DarkGreen')
 def menu():
     numeroBombas = 0
     
-    layout = [[sg.Text("Bem vindo(a) ao Campo Minado")],
+    # Layout da janela de seleção de dificuldade
+    layout = [
+        [sg.Text("Bem vindo(a) ao Campo Minado")],
         [sg.Text('Escolha a Dificuldade:')],
-        [sg.Listbox(["Iniciante (10 bombas)","Intermediário (20 bombas)","Avançado (30 bombas)"],size=(24,0),key="dif",no_scrollbar = True)],
-        [(sg.Button('Iniciar'))]
-        ]
+        [sg.Listbox(["Iniciante (10 bombas)", "Intermediário (20 bombas)", "Avançado (30 bombas)"],
+                    size=(24, 0), key="dif", no_scrollbar=True)],
+        [sg.Button('Iniciar')]
+    ]
     
     # Cria a janela inicial
     win1 = sg.Window('Campo Minado', layout)
@@ -47,10 +50,11 @@ def menu():
             if minas[co[0]][co[1]] == 1:
                 cont += 1
         return cont
-    
+
     denovo = False
     condicao = False
     
+    # Loop para leitura de eventos da janela inicial
     while True:
         events, values = win1.read()
 
@@ -93,23 +97,16 @@ def menu():
 
     for i in range(10):
         for y in range(10):
-            layout2[i].append(sg.Button('?', size=(6, 3), pad = (2 , 2), key = (str(i) + str(y))))
+            layout2[i].append(sg.Button('?', size=(6, 3), pad=(2, 2), key=(str(i) + str(y))))
     
-    layout2.append([sg.Text('', key='timer',text_color='white')])
+    layout2.append([sg.Text('', key='timer', text_color='white')])
     
     # Cria a janela do campo de jogo
     janela2 = sg.Window('Campo Minado', layout2)
     buraco = 0
-    minas = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+    # Inicializa a matriz de minas (0 = sem mina, 1 = com mina)
+    minas = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] for _ in range(10)]
 
     y = 0
     while (y < numeroBombas):
@@ -143,12 +140,12 @@ def menu():
                 if events == y:
                     col = [int(y[0]), int(y[1])]
                     if minas[col[0]][col[1]] == 1:
-                        janela2[y].update(str('X'), button_color=('white','red'))
+                        janela2[y].update(str('X'), button_color=('white', 'red'))
                         parada = True
                         break
                     else:
                         minas[col[0]][col[1]] = 2
-                        janela2[y].update(str(proximidade()), button_color=('white','lightblue'), disabled=True, disabled_button_color=('black', 'black'))
+                        janela2[y].update(str(proximidade()), button_color=('white', 'lightblue'), disabled=True, disabled_button_color=('black', 'black'))
                         buraco += 1
 
                     if buraco == 100 - numeroBombas:
@@ -160,7 +157,6 @@ def menu():
             if winner:
                 break
 
-    # Exibe as bombas no terminal
     print()
     for mina in minas:
         print(mina)
@@ -193,7 +189,6 @@ def menu():
         jan.close()
         menu()
 
-    # Exibe as bombas no terminal
     print()
     for mina in minas:
         print(mina)
