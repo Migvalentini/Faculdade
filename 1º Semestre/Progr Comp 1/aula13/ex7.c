@@ -12,7 +12,7 @@
 #include <stdio.h>
 
 int main() {
-    int x, y, aux, vet[5], ultimo=5;
+    int x, y, vet[5], ultimo=5;
 
     for(x=0; x<5; x++) {
         printf("Digite vet[%d]: ",x); scanf("%d",&vet[x]);
