@@ -1,0 +1,61 @@
+//Faça um programa que leia uma matriz M[5][5] e calcule e escreva a soma dos elementos da diagonal principal.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define N 5
+
+void leMatriz(int matriz[N][N]) {
+    int x,y;
+
+    for(x=0; x<N; x++) {
+        for(y=0; y<N; y++) {
+            scanf("%d",&matriz[x][y]);
+        }
+    }
+}
+
+void preencheMatriz(int matriz[N][N]) {
+    int x,y,z=1;
+
+    //srand(time(NULL));
+
+    for(x=0; x<N; x++) {
+        for(y=0; y<N; y++) {
+            //matriz[x][y] = rand() % 100;
+            matriz[x][y] = z;
+            z++;
+        }
+    }
+}
+
+void escreveMatriz(int matriz[N][N]) {
+    int x,y;
+
+    for(x=0; x<N; x++) { // Resolve o problema com menos interações
+        printf("%d ",matriz[x][x]);
+    }
+}
+
+int somaPrincipal(int matriz[N][N]) {
+    int x,y,soma=0;
+
+    for(x=0; x<N; x++) { // Resolve o problema com menos interações
+        soma+=matriz[x][x];
+    }
+
+    return soma;
+}
+
+main() {
+    int m[N][N],x,y;
+
+    //leMatriz(M);
+
+    preencheMatriz(m);
+
+    escreveMatriz(m);
+
+    printf("\nA soma dos elementos da diagonal principal da matriz eh %d",somaPrincipal(m));
+}
