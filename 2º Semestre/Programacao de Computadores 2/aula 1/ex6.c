@@ -32,7 +32,7 @@ void escreveMatriz(int matriz[N][N]) {
     printf("\n");
 } 
 
-int calculaMaiorLinha(int matriz[N][N]) {
+void calculaMaiorLinha(int matriz[N][N]) {
     int x,y,soma[N],maiorLinha;
 
     for(x=0; x<N; x++) {
