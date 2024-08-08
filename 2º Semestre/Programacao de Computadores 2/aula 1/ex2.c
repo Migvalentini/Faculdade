@@ -1,55 +1,80 @@
 //Faça um programa que leia uma matriz M[5][5] e calcule e escreva a soma dos elementos da diagonal secundária
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #define N 5
 
-main() {
-    int M[N][N],x,y,aux=1,soma=0;
+void leMatriz(int matriz[N][N]) {
+    int x,y;
 
-    // Lê os valores da matizes
-    // for(x=0; x<N; x++) {
-    //     for(y=0; y<N; y++) {
-    //         scanf("%d",&M[x][y]);
-    //     }
-    // }
-
-    // Preenche a matriz com valores
     for(x=0; x<N; x++) {
         for(y=0; y<N; y++) {
-            M[x][y]=aux;
-            aux++;
+            printf("Escreva o elemento da posicao %d%d: ",x,y);
+            scanf("%d",&matriz[x][y]);
         }
     }
+}
+
+void preencheMatriz(int matriz[N][N]) {
+    int x,y,z=1;
+
+    //srand(time(NULL));
 
     for(x=0; x<N; x++) {
         for(y=0; y<N; y++) {
-            printf("%d ",M[x][y]);
+            //matriz[x][y] = rand() % 100;
+            matriz[x][y] = z;
+            z++;
+        }
+    }
+}
+
+void escreveMatriz(int matriz[N][N]) {
+    int x,y;
+
+    printf("Todos os elementos da matriz sao:\n");
+
+    for(x=0; x<N; x++) { 
+        for(y=0; y<N; y++) {
+            printf("%02d ",matriz[x][y]);
         }
         printf("\n");
     }
 
-    for(x=0; x<N; x++) {
-        for(y=0; y<N; y++) {
-            if(x+y==4) {
-                printf("%d ",M[x][y]);
-                soma+=M[x][y];
-            }
-        }
-        printf("%\n");
-    }
-
     printf("\n");
+} 
+
+void escreveDiagonalSecundaria(int matriz[N][N]) {
+    int x;
+
+    printf("Os elementos da diagonal secundaria da matriz sao:\n");
 
     for(x=0; x<N; x++) {
-        printf("%d ",M[N-1-x][x]);
+        printf("%d ",matriz[x][N-1-x]);
     }
-    
-    printf("\n");
-    
-    for(x=0, y=N-1; x<N ; x++, y--) {
-        printf("%d ",M[x][y]);
+}
+
+int somaSecundaria(int matriz[N][N]) {
+    int x,soma=0;
+
+    for(x=0; x<N; x++) {
+        soma+=matriz[x][N-1-x];
     }
 
-    printf("A soma dos elementos da diagonal secundaria da matriz eh %d",soma);
+    return soma;
+}
+
+int main() {
+    int m[N][N];
+
+    leMatriz(m);
+    //preencheMatriz(m);
+    escreveMatriz(m);
+    escreveDiagonalSecundaria(m);
+
+    printf("\nA soma dos elementos da diagonal secundaria da matriz eh %d",somaSecundaria(m));
+
+    return 0;
 }

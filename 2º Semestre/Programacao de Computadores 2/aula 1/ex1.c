@@ -11,6 +11,7 @@ void leMatriz(int matriz[N][N]) {
 
     for(x=0; x<N; x++) {
         for(y=0; y<N; y++) {
+            printf("Escreva o elemento da posicao %d%d: ",x,y);
             scanf("%d",&matriz[x][y]);
         }
     }
@@ -33,13 +34,30 @@ void preencheMatriz(int matriz[N][N]) {
 void escreveMatriz(int matriz[N][N]) {
     int x,y;
 
+    printf("Todos os elementos da matriz sao:\n");
+
+    for(x=0; x<N; x++) { 
+        for(y=0; y<N; y++) {
+            printf("%02d ",matriz[x][y]);
+        }
+        printf("\n");
+    }
+
+    printf("\n");
+} 
+
+void escreveDiagonalPrincipal(int matriz[N][N]) {
+    int x;
+
+    printf("Os elementos da diagonal principal da matriz sao:\n");
+
     for(x=0; x<N; x++) { // Resolve o problema com menos interações
         printf("%d ",matriz[x][x]);
     }
 }
 
 int somaPrincipal(int matriz[N][N]) {
-    int x,y,soma=0;
+    int x,soma=0;
 
     for(x=0; x<N; x++) { // Resolve o problema com menos interações
         soma+=matriz[x][x];
@@ -48,14 +66,15 @@ int somaPrincipal(int matriz[N][N]) {
     return soma;
 }
 
-main() {
-    int m[N][N],x,y;
+int main() {
+    int m[N][N];
 
-    //leMatriz(M);
-
-    preencheMatriz(m);
-
+    leMatriz(m);
+    //preencheMatriz(m);
     escreveMatriz(m);
+    escreveDiagonalPrincipal(m);
 
     printf("\nA soma dos elementos da diagonal principal da matriz eh %d",somaPrincipal(m));
+
+    return 0;
 }
