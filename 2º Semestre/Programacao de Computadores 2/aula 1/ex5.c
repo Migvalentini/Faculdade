@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 5
+#define N 4
 
 void leMatriz(int matriz[N][N]) {
     int x,y;
@@ -36,33 +36,34 @@ void escreveMatriz(int matriz[N][N]) {
 } 
 
 int verificaIdentidade(int matriz[N][N]) {
-    int x,y,soma1=0,soma0=0;
+    int x,y;
 
     for(x=0; x<N; x++) { 
         for(y=0; y<N; y++) {
-            if(x==y&&matriz[x][y]==1) {
-                soma1++;
+            if(x==y&&matriz[x][y]!=1) {
+                return 0;
             }
-            else if(x!=y&&matriz[x][y]==0){
-                soma0++;
+            else if(x!=y&&matriz[x][y]!=0){
+                return 0;
             }
         }
     }
 
-    if(soma1==N && soma0==N*N-N) {
-        return 1;
-    } else {
-        return 0;
-    }
+    return 1;
 }
 
 int main() {
-    int m[N][N];
+    int m[N][N] = {
+        {1,0,0,0},
+        {0,1,0,0},
+        {0,0,1,0},
+        {0,0,0,1},
+    };
 
-    leMatriz(m);
+    //leMatriz(m);
     escreveMatriz(m);
 
-    printf("%d",verificaIdentidade(m));
+    printf("Identidade: %d",verificaIdentidade(m));
 
     return 0;
 }
