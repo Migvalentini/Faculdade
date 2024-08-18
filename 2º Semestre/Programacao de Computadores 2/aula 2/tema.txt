@@ -1,3 +1,0 @@
-fazer uma matriz 6x7 parecida com um calendario
-receber o dia da semana que começa a semana. Ex: se for sexta, a semana começa na sexta
-receber o mes e ter o total de dias com base no mes
