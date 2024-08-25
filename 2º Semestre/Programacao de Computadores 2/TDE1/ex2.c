@@ -13,37 +13,35 @@ void verificaPosicoes(int matriz[9][9], int l, int c) {
     int x,y,z,aux[9]={1,2,3,4,5,6,7,8,9};
     int linhaInicial=(l/3)*3,colunaInicial=(c/3)*3;
 
-    for(x=0;x<9;x++) {
-        for(y=0;y<9;y++) {
-            if(matriz[l][x] == aux[y]) {
-                aux[y]=0;
-            }
-        }
-    }
-
-    for(x=0;x<9;x++) {
-        for(y=0;y<9;y++) {
-            if(matriz[x][c] == aux[y]) {
-                aux[y]=0;
-            }
-        }
-    }
-
-    for (x = linhaInicial; x < linhaInicial + 3; x++) {
-        for (y = colunaInicial; y < colunaInicial + 3; y++) {
-            for (z=0;z<9;z++) {
-                if (matriz[x][y] == aux[z]) {
-                    aux[z]=0;
+    if(matriz[l][c]>0) {
+        printf("Elemento ja preenchido!");
+    } else{
+        for(x=0;x<9;x++) {
+            for(y=0;y<9;y++) {
+                if(matriz[l][x] == aux[y] || matriz[x][c] == aux[y]) {
+                    aux[y]=0;
                 }
             }
         }
-    }
-    
-    for(x=0;x<9;x++) {
-        if(aux[x]>0) {
-            printf("%d ",aux[x]);
+
+        for (x = linhaInicial; x < linhaInicial + 3; x++) {
+            for (y = colunaInicial; y < colunaInicial + 3; y++) {
+                for (z=0;z<9;z++) {
+                    if (matriz[x][y] == aux[z]) {
+                        aux[z]=0;
+                    }
+                }
+            }
+        }
+        
+        printf("Valores possiveis: ");
+        for(x=0;x<9;x++) {
+            if(aux[x]>0) {
+                printf("%d ",aux[x]);
+            }
         }
     }
+
 }
 
 void leMatriz(int matriz[9][9]) {
@@ -51,7 +49,6 @@ void leMatriz(int matriz[9][9]) {
 
     for(x=0;x<9;x++) {
         for(y=0;y<9;y++) {
-            printf("Valores possiveis: ");
             verificaPosicoes(matriz, x, y);
             printf("\nInsira o valor para a posicao [%d][%d]: ", x, y);
             scanf("%d", &matriz[x][y]);
@@ -72,24 +69,24 @@ void escreveMatriz(int matriz[9][9]) {
 
 int main() {
     int l,c;
-    int matriz[9][9]={0};
-    // int matriz[9][9] = {
-    //     {0,1,9,0,4,8,3,0,7},
-    //     {5,0,4,3,6,0,0,1,2},
-    //     {0,3,8,7,0,2,9,5,0},
-    //     {9,6,0,0,8,1,5,0,3},
-    //     {0,4,3,0,7,5,6,2,0},
-    //     {1,2,0,6,3,0,0,8,9},
-    //     {7,0,2,4,0,6,0,3,5},
-    //     {4,9,0,1,5,0,2,0,8},
-    //     {3,0,1,0,2,7,4,9,0},
-    // };
+    //int matriz[9][9]={0};
+    int matriz[9][9] = {
+        {0,1,9,0,4,8,3,0,7},
+        {5,0,4,3,6,0,0,1,2},
+        {0,3,8,7,0,2,9,5,0},
+        {9,6,0,0,8,1,5,0,3},
+        {0,4,3,0,7,5,6,2,0},
+        {1,2,0,6,3,0,0,8,9},
+        {7,0,2,4,0,6,0,3,5},
+        {4,9,0,1,5,0,2,0,8},
+        {3,0,1,0,2,7,4,9,0},
+    };
     
-    leMatriz(matriz);
+    //leMatriz(matriz);
     escreveMatriz(matriz);
 
     while(1) {
-        printf("\nDigite a linha (-1 para parar): ");
+        printf("\n\nDigite a linha (-1 para parar): ");
         scanf("%d",&l);
         printf("Digite a coluna (-1 para parar): ");
         scanf("%d",&c);
@@ -98,7 +95,6 @@ int main() {
             break;
         }
 
-        printf("\nValores possiveis: ");
         verificaPosicoes(matriz, l, c);
     }
 
