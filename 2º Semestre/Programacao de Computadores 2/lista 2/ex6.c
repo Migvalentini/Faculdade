@@ -23,18 +23,6 @@ void leMatriz(int matriz[N][N]) {
     }
 }
 
-int matrizDiagonal(int matriz[N][N]) {
-    int x,y;
-
-    for(x=0; x<N; x++) {
-        for(y=0; y<N; y++) {
-            if(x==y && ) {
-
-            }
-        }
-    }
-}
-
 void escreveMatriz(int matriz[N][N]) {
     int x,y;
 
@@ -46,8 +34,50 @@ void escreveMatriz(int matriz[N][N]) {
     }
 }
 
+int matrizDiagonal(int matriz[N][N]) {
+    int x,y;
+
+    for(x=0; x<N; x++) {
+        for(y=0; y<N; y++) {
+            if((x==y && matriz[x][y] == 0) || (x!=y && matriz[x][y] != 0)) {
+                return 0;
+            }
+        }
+    }
+
+    return 1;
+}
+
+int triangularSuperior  (int matriz[N][N]) {
+    int x,y;
+
+    for(x=0; x<N; x++) {
+        for(y=0; y<N; y++) {
+            if((x<=y && matriz[x][y] == 0) || (x>y && matriz[x][y] != 0)) {
+                return 0;
+            }
+        }
+    }
+
+    return 1;
+}
+
+int triangularInferior  (int matriz[N][N]) {
+    int x,y;
+
+    for(x=0; x<N; x++) {
+        for(y=0; y<N; y++) {
+            if((x>=y && matriz[x][y] == 0) || (x<y && matriz[x][y] != 0)) {
+                return 0;
+            }
+        }
+    }
+
+    return 1;
+}
+
 int main() {
-    int matriz[N][N]={
+    int matriz[N][N] = {
         {0,0,0,0,0},
         {0,0,0,0,0},
         {0,0,0,0,0},
@@ -55,6 +85,17 @@ int main() {
         {0,0,0,0,0}
     };
 
-    //leMatriz(matriz);
+    leMatriz(matriz);
     escreveMatriz(matriz);
+
+    if(matrizDiagonal(matriz)) {
+        printf("Matriz Diagonal\n");
+    } else if(triangularSuperior(matriz)) {
+        printf("Triangular Superior\n");
+    } else if(triangularInferior(matriz)) {
+        printf("Triangular Inferior\n");
+    } else {
+        printf("Nenhuma das Anteriores");
+    }
+
 }
