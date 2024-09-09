@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <ctype.h>
+#include <string.h>
 
 #define N 100
 
@@ -17,7 +18,7 @@ int str2num(char str[N]) {
 }
 
 void num2str(int num, char str[N]) {
-    int i=0,r,f;
+    int i=0,f;
     char aux;
 
     while(num>0) {
@@ -36,7 +37,7 @@ void num2str(int num, char str[N]) {
 }
 
 void int2bin(int num, char str[N]) {
-    int i=0,r,f;
+    int i=0,f;
     char aux;
 
     while(num>0) {
@@ -82,7 +83,7 @@ int hexa2num(char str[N]) {
 }
 
 int main() {
-    unsigned char c = 255;
+    // unsigned char c = 255;
     unsigned char a;
 
     // printf("%d = %c\n",97,97); // Resultado é a
@@ -92,9 +93,9 @@ int main() {
     // printf("%d\n",c); // Dará 0, pois não é possível armazenar 256, pois o máximo é 255 (128+64+32+16+8+4+2+1)
 
 
-    // for(a=0;a<128;a++) {
-    //     printf("%d = %c\n",a,a); // \0 = 0 na tabela ascii
-    // }
+    for(a=0;a<128;a++) {
+        printf("%d = %c\n",a,a); // \0 = 0 na tabela ascii
+    }
 
     char str[N];
     int num;
@@ -103,23 +104,23 @@ int main() {
     scanf("%s",str); // & é apenas para tipos primitivos (char, int). String não é tipo primitivo
     printf("Decimal: %d\n",str2num(str));
 
-    printf("Numero para string: (Ex: 1234)\nDigite o numero: ");
-    scanf("%d",&num);
-    num2str(num,str);
-    printf("String:%s",str);
+    // printf("Numero para string: (Ex: 1234)\nDigite o numero: ");
+    // scanf("%d",&num);
+    // num2str(num,str);
+    // printf("String:%s",str);
 
-    printf("Numero para binario: (Ex: 1234)\nDigite o numero: ");
-    scanf("%d",&num);
-    int2bin(num,str);
-    printf("Binario: %s",str);
+    // printf("Numero para binario: (Ex: 1234)\nDigite o numero: ");
+    // scanf("%d",&num);
+    // int2bin(num,str);
+    // printf("Binario: %s",str);
 
-    printf("Binario para numero: (Ex: 11101)\nDigite o binario: ");
-    scanf("%s",str);
-    printf("Numero: %d",bin2num(str));
+    // printf("Binario para numero: (Ex: 11101)\nDigite o binario: ");
+    // scanf("%s",str);
+    // printf("Numero: %d",bin2num(str));
 
-    printf("Hexadecimal para numero: (Ex: 2ACA)\nDigite o hexadecimal: ");
-    scanf("%s",str);
-    printf("Numero: %d",hexa2num(str));
+    // printf("Hexadecimal para numero: (Ex: 2ACA)\nDigite o hexadecimal: ");
+    // scanf("%s",str);
+    // printf("Numero: %d",hexa2num(str));
 
     return 0;
 }
