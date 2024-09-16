@@ -7,39 +7,37 @@
 // Isto    é     uma      pequena frase.
 
 #include <stdio.h>
+#include <string.h>
 
-void insereEspacos(char str[1000]) {
+void insereEspacos(char str[1000], char str2[1000]) {
     int x,y,max=strlen(str)-1;
 
-    for(x=0; str[x]!='\0'; x++) {
-        if(str[x]=='#') {
-            max++;
-            printf("X = %d\n",x);
-            for(y=max; y>x; y--) {
-                printf("%c %c\n",str[y],str[y-1]);
-                str[y]=str[y-1];
+    for(x=0; x<=max; x++) {
+        if(str[x]=='#'&&str[x+1]>'0'&&str[x+1]<'9') {
+            y=max+(str[x+1]-'0'-2);
+            printf("%d",y);
+            while(y>=x) {
+                //str2[y]=str[y-str[x+1]-'0'-2];
+                //printf("%d",y-str[x+1]-'0'-2);
+                y--;
             }
-            str[x]=' ';
-            printf("\n");
-        }
+            break;
+        } 
     }
+    //str2[30]='\0';
 }
 
 int main() {
-    char str[1000] = "Isto#4eumapequenafrase";
-    //char str[1000] = "Isto#4e#5uma#6pequena#1frase";
+    //char str[1000] = "Isto#4eumapequenafrase";
+    char str[1000] = "Isto#4e#5uma#6pequena#1frase";
+    char str2[1000];
 
-    insereEspacos(str);
+    insereEspacos(str,str2);
 
     // int a=strlen(str),x;
 
-    // for(x=a; x>0; x--) {
-    //     printf("%d ",x);
-    //     str[x]=str[x-1];
-    // }
-    // str[x]=' ';
-
     printf("\n%s",str);
+    printf("\n%s",str2);
 
     return 0;
 }
