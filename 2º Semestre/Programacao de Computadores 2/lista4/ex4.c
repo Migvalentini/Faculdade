@@ -5,7 +5,7 @@
 // ovo
 
 #include <stdio.h>
-#include <ctype.h>
+#include <string.h>
 
 int palindromo(char str[100]) {
     int x,y,tam=strlen(str)-1;
@@ -14,7 +14,6 @@ int palindromo(char str[100]) {
         if(str[x]!=str[y]) {
             return 0;
         }
-
     }
     return 1;
 }

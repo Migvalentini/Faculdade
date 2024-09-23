@@ -68,17 +68,17 @@ int somaDiagonalSecundaria(int matriz[N][N]) {
 }
 
 int main() {
-    // int matriz[N][N]={
-    //     {11,24,7,20,3},
-    //     {4,12,25,8,16},
-    //     {17,5,13,21,9},
-    //     {10,18,1,14,22},
-    //     {23,6,19,2,15}
-    // };
+    int matriz[N][N]={
+        {11,24,7,20,3},
+        {4,12,25,8,16},
+        {17,5,13,21,9},
+        {10,18,1,14,22},
+        {23,6,19,2,15}
+    };
 
-    int matriz[N][N];
+    //int matriz[N][N];
 
-    leMatriz(matriz);
+    //leMatriz(matriz);
 
     if(somaLinhas(matriz) && somaColunas(matriz) && somaDiagonalPrincipal(matriz)==somaDiagonalSecundaria(matriz)) {
         printf("1");

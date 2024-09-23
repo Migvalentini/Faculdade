@@ -4,7 +4,7 @@
 #define N 7
 
 int main() {
-    char str1[N] = "bianca";
+    char str1[N] = "Cris";
     char str2[N] = "Bruno";
 
     if(strcasecmp(str1,str2)<0) { // Retorna 0 se ambas forem iguais. Retorna -n se str1<str2. Retorna +n se str1>str2. strcmp não considera maiuscula e minuscula. strcasecmp considera

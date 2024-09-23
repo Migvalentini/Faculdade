@@ -5,7 +5,9 @@
     "math.h": "c",
     "sstream": "c",
     "string": "c",
-    "random": "c"
+    "random": "c",
+    "cmath": "c",
+    "cstdlib": "c"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

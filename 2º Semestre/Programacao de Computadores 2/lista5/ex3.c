@@ -4,6 +4,7 @@
 // Desenvolva um programa para decodificar uma string usando esse algoritmo.
 
 #include <stdio.h>
+#include <string.h>
 
 void decodifica(char str1[100], char str2[100]) {
     int x,i=0,f=strlen(str1)-1;

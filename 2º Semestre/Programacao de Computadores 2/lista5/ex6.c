@@ -10,21 +10,28 @@
 #include <string.h>
 
 void insereEspacos(char str[1000], char str2[1000]) {
-    int x,y,max=strlen(str)-1;
+    int i, j, k;
+	int num;
 
-    for(x=0; x<=max; x++) {
-        if(str[x]=='#'&&str[x+1]>'0'&&str[x+1]<'9') {
-            y=max+(str[x+1]-'0'-2);
-            printf("%d",y);
-            while(y>=x) {
-                //str2[y]=str[y-str[x+1]-'0'-2];
-                //printf("%d",y-str[x+1]-'0'-2);
-                y--;
-            }
-            break;
-        } 
-    }
-    //str2[30]='\0';
+	k =0;
+	for(i=0; str[i]!='\0'; ){
+		if ( str[i] == '#'){
+			i++;
+			num = 0;
+			while ( str[i] >='0' && str[i]<='9'){
+				num = num * 10 + (str[i]-'0'); 
+				i++;
+			}	
+			for(j=0;j<num;j++){
+				str2[k++]= ' ';
+			}	
+		}
+		else{
+			str2[k++] = str[i++];
+		}	
+
+	}
+	str2[k] ='\0';
 }
 
 int main() {
@@ -33,8 +40,6 @@ int main() {
     char str2[1000];
 
     insereEspacos(str,str2);
-
-    // int a=strlen(str),x;
 
     printf("\n%s",str);
     printf("\n%s",str2);

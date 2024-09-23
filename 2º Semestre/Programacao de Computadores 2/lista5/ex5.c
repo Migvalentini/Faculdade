@@ -27,9 +27,9 @@ int strin(char str1[100], char str2[100]) {
 }
 
 int main() {
-    printf("\n%d\n",strin("ASTRO", "ASTRONAUTA"));
-    printf("\n%d\n",strin("astro", "mastro")); 
-    printf("\n%d\n",strin("carro", "caravana"));
+    printf("%d\n",strin("ASTRO", "ASTRONAUTA"));
+    printf("%d\n",strin("astro", "mastro")); 
+    printf("%d",strin("carro", "caravana"));
 
     return 0;
 }
