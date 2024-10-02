@@ -40,8 +40,8 @@ void maisDistante(PONTO p[N], PONTO *p1, PONTO *p2) {
             d=distancia(p[i],p[j]);
             if(d > maior) {
                 maior=d;
-                p1->x = p[i].x;
-                p2->y = p[i].y;
+                *p1 = p[i];
+                *p2 = p[j];
             }
         }
     }
