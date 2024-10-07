@@ -44,7 +44,7 @@ void lePilotos(PILOTO pilotos[N]) {
 }
 
 void calculaClassificacao(PILOTO pilotos[N], PILOTO *campeao, PILOTO *vice) {
-    int x,y,somaPontuacao=0,i=0;
+    int x,y,somaPontuacao=0;
     POSICAO pontuacoes[N];
     POSICAO aux;
     PILOTO aux2;
