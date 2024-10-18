@@ -20,17 +20,42 @@ void escreveVetor(int *vet, int n) {
 }
 
 int* interseccao(int *x1, int *x2, int n1, int n2, int* qtd) {
+    int x,y,k=0;
+    *qtd=0;
 
+    for(x=0; x<n1; x++) {
+        for(y=0; y<n2; y++) {
+            if(x1[x]==x2[y]) {
+                (*qtd)++;
+                break;
+            }
+        }
+    }
+
+    int *x3 = (int *)malloc(*qtd*sizeof(int));
+
+    for(x=0; x<n1; x++) {
+        for(y=0; y<n2; y++) {
+            if(x1[x]==x2[y]) {
+                x3[k++]=x1[x];
+                break;
+            }
+        }
+    }
+
+    return x3;
 }
 
 int main() {
-    int x1[N]={1,3,5,6,7,8,9}, x2[M]={1,3,4,6,8};
+    int x1[N]={1,5,6,7,8,9}, x2[M]={1,3,4,6,8};
 
-    escreveVetor(x1,N);
-    escreveVetor(x2,M);
+    printf("Vetor 1:     "); escreveVetor(x1,N);
+    printf("Vetor 2:     "); escreveVetor(x2,M);
 
     int n3;
-    int x3 = interseccao(&x1,&x2,N,M,n3);
+    int *x3 = interseccao(x1,x2,N,M,&n3);
 
-    escreveVetor(x3,n3);
+    printf("Interseccao: "); escreveVetor(x3,n3);
+
+    free(x3);
 }
