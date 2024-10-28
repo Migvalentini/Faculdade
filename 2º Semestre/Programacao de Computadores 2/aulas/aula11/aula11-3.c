@@ -63,10 +63,12 @@ int *uniao(int *v1, int n, int *v2, int m, int *t) {
 }
 
 int main() {
-    int v1[3],v2[2],t;
+    int v1[3]={1,4,3};
+    int v2[2]={4,3};
+    int t;
 
-    leVetor(v1,3);
-    leVetor(v2,2);
+    //leVetor(v1,3);
+    //leVetor(v2,2);
 
     escreveVetor(v1,3);
     escreveVetor(v2,2);

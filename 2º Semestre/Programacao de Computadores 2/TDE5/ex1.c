@@ -2,47 +2,55 @@
 // A função implementada deverá obrigatoriamente seguir o protótipo que é definido abaixo.
 // int * separa(char str[])
 // Exemplo:
-// String	Vetor
+// String	
 // “10,15,245,11,5,1243”  	
+// Vetor
 // 10	15	245	11	5	1243
 // Faça ainda o programa principal que leia a string e chame a função implementada. Após, esse programa deverá escrever o vetor com todos os valores retornados.
 // OBSERVAÇÃO: não é permitida a utilização de funções de manipulação de strings.
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h> 
 
-#define N 100
-
-int * separa(char str[N]) {
-    int x,p,n,numeros=1;
+int * separa(char str[], int n, int *tam) {
+    int x=0,p=0,num=0;
+    *tam=1;
     
-    for(x=0; x<N; x++) {
+    while(str[x]!='\0') {
         if (str[x]==',') {
-            numeros++;
+            (*tam)++;
         }
+        x++;
     }
     
-    int *num=(int *)malloc(numeros*sizeof(int));
+    int *numeros=(int *)malloc((*tam)*sizeof(int));
 
-    for(x=0; x<N; x++) {
-        if(str[x]>'0'&&str[x]<'9') {
-            n+=str[x];
+    for(x=0; x<n; x++) {
+        if(str[x]>='0'&&str[x]<='9') {
+            num=(num*10)+str[x]-48;
         } else if (str[x]==',') {
-            num[p++]=n;
-            n=0;
+            numeros[p++]=num;
+            num=0;
         }
     }
 
-    return num;
+    numeros[p]=num;
+
+    return numeros;
 }
 
 int main() {
-    char str[N]="10,15,245,11,5,1243";
-    int x;
+    char str[100];
+    printf("Digite os numeros separados por ,: ");
+    gets(str);
+    int x,tam;
 
-    int *num=separa(str);
+    int *num=separa(str,strlen(str),&tam);
 
-    for(x=0; x<N; x++) {
+    printf("\nNumeros: ");
+
+    for(x=0; x<tam; x++) {
         printf("%d ",num[x]);
     }
 }
