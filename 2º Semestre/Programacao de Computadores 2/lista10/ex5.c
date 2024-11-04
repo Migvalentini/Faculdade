@@ -42,4 +42,6 @@ int main() {
     for(x=0; x<n; x++) {
         printf("%d ",numPrimos[x]);
     }
+
+    free(numPrimos);
 }

@@ -106,4 +106,6 @@ int main() {
     for(x=0; x<numMaioresIdade; x++) {
         printf("%02d %7s %02d/%02d/%02d\n",maioresIdade[x].codigo,maioresIdade[x].nome,maioresIdade[x].nasc.dia,maioresIdade[x].nasc.mes,maioresIdade[x].nasc.ano);
     }
+
+    free(maioresIdade);
 }

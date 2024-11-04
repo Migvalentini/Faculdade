@@ -78,4 +78,6 @@ int main() {
     for(i=0; i<pDentro; i++) {
         printf("(%.1f, %.1f)\n",pontosDentroRegiao[i].x,pontosDentroRegiao[i].y);
     }
+
+    free(pontosDentroRegiao);
 }
