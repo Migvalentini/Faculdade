@@ -1,4 +1,0 @@
-Numero: 10.000000
-Numero: 9.000000
-Numero: 8.000000
-Numero: 9.000000

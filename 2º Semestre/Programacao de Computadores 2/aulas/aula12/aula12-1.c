@@ -25,7 +25,7 @@ Para  arquivos binarios:
 #include <stdlib.h>
 
 int main() {
-    char entrada[100] = "..//questao1.bin";
+    char entrada[100] = "../arquivos/questao1.bin";
 
     FILE *f = fopen(entrada, "rb");
 
@@ -50,7 +50,7 @@ int main() {
     // SEEK_SET - em relação ao início
     // SEEK_END - em relação ao final
 
-    char saida[100]="../questao1.lix";
+    char saida[100]="../arquivos/questao1.lix";
     FILE *s = fopen(saida,"wb");
 
     if(s == NULL) {

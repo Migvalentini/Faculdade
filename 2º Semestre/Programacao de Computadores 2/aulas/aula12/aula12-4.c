@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 int main() {
-    char entrada[100] = "../questao7.txt";
-    char saida[100] = "../saida7.txt";
+    char entrada[100] = "../arquivos/questao7.txt";
+    char saida[100] = "../arquivos/saida7.txt";
     FILE *f = fopen(entrada,"r");
     FILE *s = fopen(saida,"w");
 

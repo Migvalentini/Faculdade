@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-    char entrada[100] = "../alunos.txt";
+    char entrada[100] = "../arquivos/alunos.txt";
 
     FILE *f = fopen(entrada,"r");
 
@@ -11,7 +11,7 @@ int main() {
         exit(0);
     }
 
-    char saida[100]="../saida.txt";
+    char saida[100]="../arquivos/saida.txt";
     FILE *s = fopen(saida,"wb");
 
     if(s == NULL) {
