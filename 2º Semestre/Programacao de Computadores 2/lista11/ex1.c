@@ -12,3 +12,42 @@
 // Aprovados: 2
 // Reprovados: 1
 
+#include <stdio.h>
+#include <stdlib.h>
+
+void medias(char arquivo[50], int *aprovados, int *reprovados) {
+    FILE *f = fopen(arquivo, "r");
+    char nome[80];
+    float n1,n2,n3,m;
+
+    if ( f == NULL ){
+		printf("Erro ao abrir o arquivo %s\n", arquivo);
+		exit(0);
+	}
+
+    *aprovados = 0;
+    *reprovados = 0;
+
+    while(fgets(nome, 80, f)) {
+        fscanf(f,"%f %f %f\n",&n1,&n2,&n3);
+        m=(n1+n2+n3)/3;
+        printf("%.1f %.1f %.1f -> %.1f\n",n1,n2,n3,m);
+
+        if(m >= 5) {
+            (*aprovados)++;
+        } else {
+            (*reprovados)++;
+        }
+    }
+
+    fclose(f);
+} 
+
+int main() {
+    char entrada[50] = "../arquivos/entrada1.txt";
+    int aprovados, reprovados;
+
+    medias(entrada, &aprovados, &reprovados);
+
+    printf("Aprovados: %d\nReprovados: %d",aprovados,reprovados);
+}

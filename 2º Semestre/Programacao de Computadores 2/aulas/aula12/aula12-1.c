@@ -9,16 +9,20 @@ Tipos de Arquivos:
 Modos de Abertura:
 
 Para arquivos texto:
-- R: read
-- W: write
-- A: append
+"r"	  Abre um arquivo para leitura. O arquivo deve existir, caso contrário retorna NULL.
+"w"	  Abre um arquivo para escrita. Cria o arquivo se ele não existir ou sobrescreve o conteúdo se ele já existir.
+"a"	  Abre um arquivo para escrita no final do arquivo (modo de append). Cria o arquivo se ele não existir.
+"r+"  Abre um arquivo para leitura e escrita. O arquivo deve existir, caso contrário retorna NULL.
+"w+"  Abre um arquivo para leitura e escrita. Cria o arquivo se ele não existir ou sobrescreve o conteúdo se ele já existir.
+"a+"  Abre um arquivo para leitura e escrita no final do arquivo (modo de append). Cria o arquivo se ele não existir.
 
 Para  arquivos binarios:
-- RB
-- WB
-- AB
-- RW
-- WR
+"rb"  Abre um arquivo binário para leitura. O arquivo deve existir, caso contrário retorna NULL.
+"wb"  Abre um arquivo binário para escrita. Cria o arquivo se ele não existir ou sobrescreve o conteúdo se ele já existir.
+"ab"  Abre um arquivo binário para escrita no final do arquivo (modo de append). Cria o arquivo se ele não existir.
+"rb+" Abre um arquivo binário para leitura e escrita. O arquivo deve existir, caso contrário retorna NULL.
+"wb+" Abre um arquivo binário para leitura e escrita. Cria o arquivo se ele não existir ou sobrescreve o conteúdo se ele já existir.
+"ab+" Abre um arquivo binário para leitura e escrita no final do arquivo (modo de append). Cria o arquivo se ele não existir.
 */
 
 #include <stdio.h>
