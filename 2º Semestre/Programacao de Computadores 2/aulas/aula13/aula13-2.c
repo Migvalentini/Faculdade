@@ -93,7 +93,7 @@ void ordenaArquivo(ALUNO *a, int t) {
             m1= (a[j].n1 + a[j].n2 + a[j].n3)/3;
             m2= (a[j+1].n1 + a[j+1].n2 + a[j+1].n3)/3;
 
-            if(m1 < m2 || m1==m2 && strcmp(a[j].nome, a[j+1].nome) > 0) {
+            if(m1 < m2 || (m1==m2 && strcmp(a[j].nome, a[j+1].nome)) > 0) {
                 aux=a[j];
                 a[j]=a[j+1];
                 a[j+1]=aux;
@@ -103,7 +103,7 @@ void ordenaArquivo(ALUNO *a, int t) {
 }
 
 int main() {
-    char entrada[50] = "../questao5.bin", saida[50] = "saida.txt";
+    char entrada[50] = "../arquivos/questao5.bin", saida[50] = "../arquivos/saida.txt";
     int t;
 
     ALUNO *v = leArquivo(entrada, &t);

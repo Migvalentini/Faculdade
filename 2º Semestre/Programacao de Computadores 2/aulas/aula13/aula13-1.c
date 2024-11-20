@@ -72,7 +72,7 @@ void atualizaArquivo(char *nome, int cod, float novo) {
 }
 
 int main() {
-    char entrada[50] = "../questao7.bin";
+    char entrada[50] = "../arquivos/questao7.bin";
 
     escreveArquivo(entrada);
     atualizaArquivo(entrada, 65, 1);
