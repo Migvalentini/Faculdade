@@ -51,6 +51,10 @@ void merge_arquivos(char arquivo1[50], char arquivo2[50], char final[50]) {
     for(x=0; x<k; x++) {
         fprintf(fout, "%d\n", numeros[x]);
     }
+
+    fclose(fin1);
+    fclose(fin2);
+    fclose(fout);
 }
 
 int main() {
