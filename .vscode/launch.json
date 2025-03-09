@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Miguel/source/repos/Faculdade/3Semestre/Exercicios05-03",
-      "program": "c:/Users/Miguel/source/repos/Faculdade/3Semestre/Exercicios05-03/build/Debug/outDebug",
+      "cwd": "c:/Users/Miguel/source/repos/Faculdade/3Semestre/ProgramacaoOrientadaAObjetos/Exercicios05-03",
+      "program": "c:/Users/Miguel/source/repos/Faculdade/3Semestre/ProgramacaoOrientadaAObjetos/Exercicios05-03/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
