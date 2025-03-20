@@ -8,6 +8,8 @@ public class Principal {
 		Aluno b = new Aluno("Joao");
 		Aluno c = new Aluno();
 		System.out.println("Olá " + a.getNome() + ". Sua Matrícula é " + a.getMatricula() + "!");
+		System.out.println("Olá " + b.getNome() + ". Sua Matrícula é " + b.getMatricula() + "!");
+		System.out.println("Olá " + c.getNome() + ". Sua Matrícula é " + c.getMatricula() + "!");
 		
 		Scanner sc = new Scanner(System.in);
 		

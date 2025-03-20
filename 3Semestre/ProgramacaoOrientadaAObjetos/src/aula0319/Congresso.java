@@ -1,16 +1,22 @@
 package aula0319;
 
+import java.util.Scanner;
+
 public class Congresso {
 
 	public static void main(String[] args) {
 		FichaInscricao f1 = new FichaInscricao();
 		FichaInscricao f2 = new FichaInscricao();
 		
-		f1.leDados();
-		f2.leDados();
+		Scanner sc = new Scanner(System.in);
+		
+		f1.leDados(sc);
+		f2.leDados(sc);
 		
 		f1.escreveDados();
 		f2.escreveDados();
+		
+		sc.close();
 	}
 
 }

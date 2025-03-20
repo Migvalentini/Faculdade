@@ -93,9 +93,7 @@ public class FichaInscricao {
 		return "Nome = " + this.nome + "\nCidade = " + this.cidade;
 	}
 	
-	public void leDados() {
-		Scanner sc = new Scanner(System.in);
-		
+	public void leDados(Scanner sc) {
 		System.out.println("Digite seu nome: ");
 		this.setNome(sc.nextLine());
 		System.out.println("Digite seu endereço: ");
@@ -108,6 +106,13 @@ public class FichaInscricao {
 		this.setTelefone(sc.nextLine());
 		System.out.println("Digite seu email: ");
 		this.setEmail(sc.nextLine());
+		System.out.println("Foi pago? S/N ");
+		String s = sc.nextLine();
+		if(s.equals("S")) {			
+			this.setPago(true);
+		} else {
+			this.setPago(false);
+		}
 	}
 	
 	public void escreveDados() {
@@ -118,6 +123,7 @@ public class FichaInscricao {
 		System.out.println("Telefone: " + this.getTelefone());
 		System.out.println("Email: " + this.getEmail());
 		System.out.println("Pago: " + this.isPago());
-		System.out.println("Investimento: " + this.getInvestimento());
+		System.out.println("Investimento: " + FichaInscricao.getInvestimento() + "\n"); //chamado assim pois o método é static
 	}
+	
 }
