@@ -11,13 +11,14 @@ public class Ex1Principal {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Digite o lado do terreno: ");
-		int lado = sc.nextInt();
+		float lado = sc.nextFloat();
 		t1.setLado(lado);
+		
 		System.out.println("Digite a altura do terreno: ");
-		int altura = sc.nextInt();
+		float altura = sc.nextFloat();
 		t1.setAltura(altura);
 		
-		System.out.println("Área: " + t1.calculaArea());
+		System.out.println("Área: " + t1.getArea());
 		
 		sc.close();
 	}

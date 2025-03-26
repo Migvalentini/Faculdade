@@ -1,18 +1,18 @@
 package aula0319;
 
 public class Ex1Terreno {
-	private int lado;
+	private float lado;
 	private float altura;
 
-	public void setLado(int lado) {
+	public void setLado(float lado) {
 		this.lado = lado;
 	}
 
-	public void setAltura(int altura) {
+	public void setAltura(float altura) {
 		this.altura = altura;
 	}
 
-	public float calculaArea() {
-		 return this.lado * this.altura;
-	 }
+	public float getArea() {
+		return this.lado * this.altura;
+	}
 }
