@@ -14,7 +14,7 @@ public class Principal {
 		// número de identificação único (ID), um endereço de e-mail e um telefone
 		// de contato.
 		// 2. Cada animal de estimação pertence a um cliente. Os animais de
-		// estimação têm um nome, uma espécie (como cão, gato, etc.), uma raça,
+		// estimação têm um nome, uma espécie (como cão, gato, etc), uma raça,
 		// uma idade, e um número de identificação único (ID).
 		// 3. A clínica mantém um registro das consultas realizadas. Cada consulta
 		// está associada a um único animal de estimação e ocorre em uma data
