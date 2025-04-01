@@ -1,13 +1,13 @@
-package aula0319;
+package aula0319.Ex5;
 
 import java.util.Scanner;
 
-public class Ex5Principal {
+public class Principal {
 
 	public static void main(String[] args) {
 		// Faça um programa em java que calcule e mostre a área de um losango. Sabese que: A = (diagonal_maior * diagonal_menor)/2;
 
-		Ex5Losango l = new Ex5Losango();
+		Losango l = new Losango();
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Digite a diagonal maior: ");

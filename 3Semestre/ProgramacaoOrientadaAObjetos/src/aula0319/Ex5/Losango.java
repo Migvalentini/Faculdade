@@ -1,6 +1,6 @@
-package aula0319;
+package aula0319.Ex5;
 
-public class Ex5Losango {
+public class Losango {
 	private float diagonal_maior;
 	private float diagonal_menor;
 	

@@ -1,8 +1,8 @@
-package aula0319;
+package aula0319.Ex6;
 
 import java.util.Scanner;
 
-public class Ex6Principal {
+public class Principal {
 
 	public static void main(String[] args) {
 		// Escreva um programa em java para ler o nome e a idade de uma pessoa, e
@@ -10,7 +10,7 @@ public class Ex6Principal {
 		// um ano possui 365 dias. Ex: uma pessoa com 19 anos possui 6935 dias de vida;
 		// veja um exemplo de saída: MARIA, VOCÊ JÁ VIVEU 6935 DIAS
 
-		Ex6Pessoa p = new Ex6Pessoa();
+		Pessoa p = new Pessoa();
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Digite o nome da pessoa: ");

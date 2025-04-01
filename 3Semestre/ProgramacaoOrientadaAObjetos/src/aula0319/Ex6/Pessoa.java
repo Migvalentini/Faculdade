@@ -1,6 +1,6 @@
-package aula0319;
+package aula0319.Ex6;
 
-public class Ex6Pessoa {
+public class Pessoa {
 	private static final int DIASANO = 365;
 	private String nome;
 	
@@ -19,6 +19,6 @@ public class Ex6Pessoa {
 	}
 	
 	public int getAnos() {
-		return Ex6Pessoa.DIASANO * this.idade;
+		return Pessoa.DIASANO * this.idade;
 	}
 }

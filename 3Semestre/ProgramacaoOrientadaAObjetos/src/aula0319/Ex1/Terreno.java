@@ -1,6 +1,6 @@
-package aula0319;
+package aula0319.Ex1;
 
-public class Ex1Terreno {
+public class Terreno {
 	private float lado;
 	private float altura;
 

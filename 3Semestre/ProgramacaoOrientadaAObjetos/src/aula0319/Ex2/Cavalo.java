@@ -1,9 +1,9 @@
-package aula0319;
+package aula0319.Ex2;
 
-public class Ex2Cavalo {
+public class Cavalo {
 	private static final int QUANTIDADEPATAS = 4;
 	
 	public int calculaFerraduras(int cavalos) {
-		return cavalos * Ex2Cavalo.QUANTIDADEPATAS;
+		return cavalos * Cavalo.QUANTIDADEPATAS;
 	}
 }
