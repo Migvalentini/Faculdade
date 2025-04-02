@@ -1,6 +1,6 @@
-package aula0319;
+package aula0319.Ex4;
 
-public class Ex4Salario {
+public class Salario {
 	private static final double VALOR = 1518;
 
 	public static double getValor() {

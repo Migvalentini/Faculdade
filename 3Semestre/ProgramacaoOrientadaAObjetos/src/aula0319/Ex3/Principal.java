@@ -1,12 +1,12 @@
-package aula0319;
+package aula0319.Ex3;
 
 import java.util.Scanner;
 
-public class Ex3Principal {
+public class Principal {
 
 	public static void main(String[] args) {
 		//Faça um programa em java que receba o valor dos catetos a e b de um triângulo, calcule e mostre o valor da hipotenusa. 
-		Ex3Triangulo t = new Ex3Triangulo();
+		Triangulo t = new Triangulo();
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Digite o cateto A: ");

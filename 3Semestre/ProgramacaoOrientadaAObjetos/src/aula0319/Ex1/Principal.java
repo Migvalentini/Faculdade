@@ -1,13 +1,13 @@
-package aula0319;
+package aula0319.Ex1;
 
 import java.util.Scanner;
 
-public class Ex1Principal {
+public class Principal {
 
 	public static void main(String[] args) {
 		//Uma imobiliária vende apenas terrenos retangulares. 
 		//Faça um programa em java para ler as dimensões de um terreno e depois exibir a área do terreno. (lado x altura)
-		Ex1Terreno t1 = new Ex1Terreno();
+		Terreno t1 = new Terreno();
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Digite o lado do terreno: ");

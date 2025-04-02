@@ -1,6 +1,6 @@
-package aula0319;
+package aula0319.Ex3;
 
-public class Ex3Triangulo {
+public class Triangulo {
 	private float catetoA;
 	private float catetoB;
 	
