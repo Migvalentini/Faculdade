@@ -14,10 +14,16 @@ public class Principal {
 		Ingresso i = new Ingresso(20);
 		VIP v = new VIP(20);
 		Normal n = new Normal(20);
+		CamaroteInferior ci = new CamaroteInferior(30);
+		ci.setLocalizacao("Perto do banheiro");
+		CamaroteSuperior cs = new CamaroteSuperior(30);
 		
 		i.imprimeValor();
 		v.imprimeValor();
 		n.imprimeNormal();
+		ci.imprimeValor();
+		System.out.println("E sua localizacao é " + ci.getLocalizacao());
+		cs.imprimeValor();
 	}
 
 }

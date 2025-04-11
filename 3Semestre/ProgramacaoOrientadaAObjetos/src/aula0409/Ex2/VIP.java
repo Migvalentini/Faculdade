@@ -7,8 +7,7 @@ public class VIP extends Ingresso {
 		super(valor + VALORADICIONAL);
 	}
 	
-	@Override
-	public void imprimeValor() {
-		System.out.println("O valor do ingresso é " + this.getValor() + " reais");
+	public double retornaValor() {
+		return this.getValor();
 	}
 }
