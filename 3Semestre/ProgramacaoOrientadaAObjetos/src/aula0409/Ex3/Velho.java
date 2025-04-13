@@ -3,17 +3,17 @@ package aula0409.Ex3;
 public class Velho extends Imovel {
 	private double valorDesconto;
 
-	public Velho(String endereco, double preco, double valorAdicional) {
+	public Velho(String endereco, double preco, double valorDesconto) {
 		super(endereco, preco);
-		this.valorDesconto = valorAdicional;
+		this.valorDesconto = valorDesconto;
 	}
 
-	public double getValorAdicional() {
+	public double getValorDesconto() {
 		return valorDesconto;
 	}
 
-	public void setValorAdicional(double valorAdicional) {
-		this.valorDesconto = valorAdicional;
+	public void setValorDesconto(double valorDesconto) {
+		this.valorDesconto = valorDesconto;
 	}
 	
 	public void imprimirDesconto() {

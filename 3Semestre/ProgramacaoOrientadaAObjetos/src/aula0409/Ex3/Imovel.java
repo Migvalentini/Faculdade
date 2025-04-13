@@ -25,7 +25,7 @@ public class Imovel {
 		this.preco = preco;
 	}
 	
-	public void impremeValores() {
+	public void imprimeValores() {
 		System.out.println("Endereço: " + this.getEndereco());
 		System.out.println("Preço: " + this.getPreco());
 	}
