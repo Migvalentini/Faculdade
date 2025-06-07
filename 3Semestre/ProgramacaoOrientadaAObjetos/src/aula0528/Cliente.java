@@ -1,14 +1,15 @@
 package aula0528;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Cliente implements Comparable<Cliente> {
 	private int id;
 	private String nome;
-	private String telefone;
+	private ArrayList<Telefone> telefone;
 	private int idade;
 	
-	public Cliente(int id, String nome, String telefone, int idade) {
+	public Cliente(int id, String nome, ArrayList<Telefone> telefone, int idade) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -27,10 +28,10 @@ public class Cliente implements Comparable<Cliente> {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getTelefone() {
+	public ArrayList<Telefone> getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(String telefone) {
+	public void setTelefone(ArrayList<Telefone> telefone) {
 		this.telefone = telefone;
 	}
 	public int getIdade() {
@@ -45,7 +46,7 @@ public class Cliente implements Comparable<Cliente> {
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(nome);
+		return Objects.hash(id);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -56,7 +57,7 @@ public class Cliente implements Comparable<Cliente> {
 		if (getClass() != obj.getClass())
 			return false;
 		Cliente other = (Cliente) obj;
-		return Objects.equals(nome, other.nome);
+		return Objects.equals(id, other.id);
 	}
 	
 	@Override
