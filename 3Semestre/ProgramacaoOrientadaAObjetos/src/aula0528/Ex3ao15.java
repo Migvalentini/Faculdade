@@ -3,6 +3,7 @@ package aula0528;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -12,7 +13,7 @@ public class Ex3ao15 {
 		Ex3ao15 ex3ao15 = new Ex3ao15();
 		
 		// 3) Escreva um programa que preencha e percorra todos os elementos de um ArrayList de clientes
-		List<Cliente> clientes = new ArrayList<Cliente>();
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		Random gerador = new Random();
 		
 		clientes.add(new Cliente(1, "Miguel", new ArrayList<Telefone>(Arrays.asList(new Telefone("id", "54", "numero"))), 19));
@@ -55,7 +56,7 @@ public class Ex3ao15 {
 		ex3ao15.print(clientesAleatorios, null);
 		
 		// 9) Escreva um programa para reverter os elementos de um ArrayList de clientes
-		clientes = clientes.reversed();
+		Collections.reverse(clientes);
 		
 		ex3ao15.print(clientes, null);
 		
@@ -96,8 +97,18 @@ public class Ex3ao15 {
 		// 15) Seguindo o exemplo de medição de tempo constante na classe Exemplo 1, faça um programa que gere e insira aleatoriamente 10000 Clientes em uma ArrayList de clientes. 
 		// Repita o processo com uma LinkedList e compare os resultados. 
 		// Agora meça o tempo para encontrar o cliente na posição 5670 nas duas listas e compare novamente os resultados. O que se pode deduzir dos resultados?
+		ArrayList<Cliente> clientes1 = new ArrayList<Cliente>();
+		LinkedList<Cliente> clientes2 = new LinkedList<Cliente>();
 		
+		for(int x=0; x<10000; x++) {
+			clientes1.add(new Cliente(x, "nome" + x , new ArrayList<Telefone>(Arrays.asList(new Telefone("id" + x, "54", "934343434"))), 1));
+		}
+		//System.out.println(clientes1.get(5670));
 		
+		for(int x=0; x<10000; x++) {
+			clientes2.add(new Cliente(x, "nome" + x , new ArrayList<Telefone>(Arrays.asList(new Telefone("id" + x, "54", "934343434"))), 1));
+		}
+		System.out.println(clientes2.get(5670));
 	}
 
 	private void print(List<Cliente> clientes, Cliente cliente) {
