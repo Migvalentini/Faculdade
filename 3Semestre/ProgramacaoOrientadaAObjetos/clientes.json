@@ -1,0 +1,25 @@
+[ {
+  "@id" : 1,
+  "nome" : "Cliente 1",
+  "telefone" : "1",
+  "email" : "2",
+  "endereco" : {
+    "rua" : "4",
+    "numero" : "5",
+    "complemento" : "6",
+    "bairro" : "7",
+    "cep" : "8",
+    "cidade" : "9",
+    "estado" : "10"
+  },
+  "codigo" : 1,
+  "cartaoCredito" : "3",
+  "pedidos" : null,
+  "usuario" : {
+    "@id" : 2,
+    "cliente" : 1,
+    "usuario" : "user",
+    "senha" : "1234",
+    "tipo" : "CLIENTE"
+  }
+} ]

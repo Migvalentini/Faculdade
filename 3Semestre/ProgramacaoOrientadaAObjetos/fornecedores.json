@@ -1,0 +1,18 @@
+[ {
+  "@id" : 1,
+  "nome" : "Pedro",
+  "telefone" : "telefone",
+  "email" : "email",
+  "endereco" : {
+    "rua" : "rua",
+    "numero" : "numero",
+    "complemento" : "complemento",
+    "bairro" : "bairro",
+    "cep" : "cep",
+    "cidade" : "cidade",
+    "estado" : "estado"
+  },
+  "codigo" : 1,
+  "descricao" : "Descrição",
+  "produtos" : null
+} ]
