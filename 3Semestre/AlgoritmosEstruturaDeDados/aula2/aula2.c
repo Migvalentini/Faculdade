@@ -11,7 +11,7 @@ implementar, de forma recursiva, a operação para escrever a lista.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define N 5
+#define N 10
 
 typedef struct lista
 {
@@ -20,7 +20,7 @@ typedef struct lista
 } LISTA;
 
 void inserefim(LISTA v[], int *t) {
-    if(*t < N-1) {
+    if(*t < N) {
         printf("Numero: ");
         scanf("%d", &(v[*t].num));
         printf("Nome: ");
@@ -31,15 +31,15 @@ void inserefim(LISTA v[], int *t) {
 
 void insereordenado(LISTA v[], int *t) {
     LISTA aux;
-    if(*t < N-1) {
+    if(*t < N) {
         printf("Numero: ");
         scanf("%d", &(v[*t].num));
         printf("Nome: ");
         scanf("%s", v[*t].nome);
         (*t)++;
     }
-    int x = *t;
-    while(v[x].num<v[x-1].num) {
+    int x = (*t)-1;
+    while(x>0 && v[x].num<v[x-1].num) {
         aux=v[x];
         v[x]=v[x-1];
         v[x-1]=aux;
@@ -53,7 +53,7 @@ void insereinicio(LISTA v[], int *t) {
         v[x+1]=v[x];
     }
 
-    if(*t < N-1) {
+    if(*t < N) {
         printf("Numero: ");
         scanf("%d", &(v[0].num));
         printf("Nome: ");
@@ -84,6 +84,14 @@ int main() {
     LISTA lst[N];
     int tam = 0;
 
+    inserefim(lst, &tam);
+    inserefim(lst, &tam);
+    inserefim(lst, &tam);
+    inserefim(lst, &tam);
+    inserefim(lst, &tam);
+    inserefim(lst, &tam);
+    inserefim(lst, &tam);
+    inserefim(lst, &tam);
     inserefim(lst, &tam);
     inserefim(lst, &tam);
     inserefim(lst, &tam);
