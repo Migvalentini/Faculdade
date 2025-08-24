@@ -46,6 +46,19 @@ void insere(Elemento **lista, int numero) {
     }
 }
 
+void inserePrimeiro(Elemento **lista, int numero) {
+    Elemento *novo;
+    novo = (Elemento*)malloc(sizeof(Elemento));
+    novo->num = numero;
+    if(*lista == NULL) { //primeiro e único
+        novo->prox = NULL;
+        *lista = novo;
+    } else {
+        novo->prox = *lista;
+    }
+    *lista = novo;  
+}
+
 void verificaOrdenacao(Elemento *lista) {
     Elemento *aux=lista;
     int crescente = 1, decrescente = 1;
@@ -74,17 +87,63 @@ void copia(Elemento *lista1, Elemento **lista2) {
     }
 }
 
+void copiaSemRepetido(Elemento *lista1, Elemento **lista2) {
+    Elemento *aux1 = lista1;
+    Elemento *aux2;
+    int flag;
+    
+    while (aux1 != NULL) {
+        flag = 1;
+        aux2 = *lista2;
+        while (aux2 != NULL) {
+            if(aux2->num == aux1->num) {
+                flag = 0;
+            }
+            aux2 = aux2->prox;
+        } 
+        if(flag == 1) {
+            insere(lista2, aux1->num);
+        }
+        aux1 = aux1->prox;
+    }
+}
+
+void inverterListas(Elemento *lista1, Elemento **lista2) {
+    Elemento *aux = lista1;
+
+    while(aux != NULL) {
+        inserePrimeiro(lista2, aux->num);
+        aux = aux->prox;
+    }
+}
+
+void inverterLista(Elemento **lista) {
+    Elemento *aux = *lista;
+    Elemento *novaLista = NULL;
+
+    while(aux != NULL) {
+        printf("Num: %d ", aux->num);
+        inserePrimeiro(&novaLista, aux->num);
+        aux = aux->prox;
+    }
+
+    *lista = novaLista;
+}
+
 int main() {
     Elemento *L1 = NULL;
-    Elemento *L2 = NULL;
+    //Elemento *L2 = NULL;
 
     insere(&L1, 8);
     insere(&L1, 7);
-    insere(&L1, 3);
+    insere(&L1, 2);
     escreve(L1);
 
-    copia(L1, &L2);
-    escreve(L2);
+    //inverterListas(L1, &L2);
+    //escreve(L2);
 
-    verificaOrdenacao(L1);
+    inverterLista(&L1);
+    escreve(L1);
+
+    //verificaOrdenacao(L1);
 }

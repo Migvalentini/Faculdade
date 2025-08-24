@@ -118,23 +118,23 @@ void escreve() {
 int main() {
     inicio = NULL;
 
-    insereOrdenado(2);
-    insereOrdenado(1);
-    insereOrdenado(4);
-    insereOrdenado(3);
+    inserePrimeiro(2);
+    inserePrimeiro(1);
+    inserePrimeiro(4);
+    inserePrimeiro(3);
     escreve();
 
-    removeMeio(3);
-    escreve();
-
-    removeUltimo();
-    escreve();
-
-    removePrimeiro();
-    escreve();
-
-    removePrimeiroEUnico();
-    escreve();
+    //removeMeio(3);
+    //escreve();
+//
+    //removeUltimo();
+    //escreve();
+//
+    //removePrimeiro();
+    //escreve();
+//
+    //removePrimeiroEUnico();
+    //escreve();
 
     return 0;
 }
