@@ -74,8 +74,7 @@ void insereOrdenado(int numero) {
 
 void removeMeio(int numero) {
     Elemento *aux=inicio, *ant=inicio;
-    int valor = numero;
-    while (aux != NULL && aux->info != valor ) {
+    while (aux != NULL && aux->info != numero ) {
         ant = aux;
         aux = aux->prox;
     }
