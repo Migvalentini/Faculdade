@@ -1,4 +1,7 @@
 //2) Implementar as operações de inserção e remoção de elementos (números inteiros) em uma lista circular, implementada por encadeamento simples.
+//A lista representa uma rota de entregas, e o conteúdo de cada nodo é o código daquele ponto na rota. 
+//Pode-se inserir novos pontos na rota, ou remover pontos existentes. 
+//Faça também uma função para escrever os pontos da rota, a partir de um ponto informado.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,25 +33,43 @@ void insereCircular(int numero) {
 }
 
 void removeCircular(int numero) {
-    Elemento *aux = inicio, *ant=inicio;
-
     if(inicio == NULL) {
         return;
     } 
-    else if(inicio->prox == inicio && inicio->info == numero) {
+    
+    if(inicio->prox == inicio && inicio->info == numero) {
+        printf("ENTROU!");
         free(inicio);
+        inicio = NULL;
+        return;
+    }
+    Elemento *aux = inicio, *ant=inicio;
+    if (inicio->prox->prox == inicio) {
+        if(inicio->info == numero) {
+            inicio = inicio->prox;
+            inicio->prox = inicio;
+        }
+        else if(inicio->prox->info == numero) {
+            inicio->prox = inicio;
+        }
     }
     else if (inicio->prox != inicio) {
-        do{
-            if(aux->info == numero) {
-                ant = aux;
-                aux = aux->prox;
-                ant->prox = aux->prox;
-                free(aux);
-                break;
+        if(inicio->info == numero) {
+            Elemento *ultimo = inicio;
+            while(ultimo->prox != inicio) {
+                ultimo = ultimo->prox;
             }
+            inicio = inicio->prox;
+            ultimo->prox = inicio;
+        }
+        while (aux->prox != inicio && aux->info != numero ) {
+            ant = aux;
             aux = aux->prox;
-        } while(aux != inicio);
+        }
+        if (aux->info == numero) {
+            ant->prox = aux->prox;
+            free(aux);
+        }
     }
 }
 
@@ -67,14 +88,13 @@ void escreve() {
 int main() {
     inicio = NULL;
 
+    insereCircular(1);
     insereCircular(2);
-    insereCircular(3);
     insereCircular(3);
     //insereCircular(4);
     //insereCircular(5);
     escreve();
-    printf("\n\n");
-    removeCircular(2);
+    removeCircular(5);
     escreve();
 
     return 0;
