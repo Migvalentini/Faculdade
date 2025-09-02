@@ -1,7 +1,4 @@
-//2) Implementar as operações de inserção e remoção de elementos (números inteiros) em uma lista circular, implementada por encadeamento simples.
-//A lista representa uma rota de entregas, e o conteúdo de cada nodo é o código daquele ponto na rota. 
-//Pode-se inserir novos pontos na rota, ou remover pontos existentes. 
-//Faça também uma função para escrever os pontos da rota, a partir de um ponto informado.
+//1) Implementar a operação de inversão de uma lista encadeada simples (inverter sem criar uma segunda lista).
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,88 +10,63 @@ struct elemento {
 
 Elemento *inicio;
 
-void insereCircular(int numero) {
-    Elemento *novo;
+void insereOrdenado(int numero) {
+    Elemento *novo, *aux = inicio, *ant = inicio;
     novo = (Elemento*)malloc(sizeof(Elemento));
     novo->info = numero;
-
-    if(inicio==NULL) {
-        novo->prox = novo;
+    novo->prox = NULL;
+    if(inicio == NULL) { //primeiro e único
         inicio = novo;
-    }
-    else if (inicio->prox == inicio) {
-        inicio->prox = novo;
+    } else if(novo->info <= inicio->info) { //insere na frente do primeiro
         novo->prox = inicio;
-    }
-    else {
-        novo->prox = inicio->prox;
-        inicio->prox = novo;
-    }
-}
-
-void removeCircular(int numero) {
-    if(inicio == NULL) {
-        return;
-    } 
-    
-    if(inicio->prox == inicio && inicio->info == numero) {
-        printf("ENTROU!");
-        free(inicio);
-        inicio = NULL;
-        return;
-    }
-    Elemento *aux = inicio, *ant=inicio;
-    if (inicio->prox->prox == inicio) {
-        if(inicio->info == numero) {
-            inicio = inicio->prox;
-            inicio->prox = inicio;
-        }
-        else if(inicio->prox->info == numero) {
-            inicio->prox = inicio;
-        }
-    }
-    else if (inicio->prox != inicio) {
-        if(inicio->info == numero) {
-            Elemento *ultimo = inicio;
-            while(ultimo->prox != inicio) {
-                ultimo = ultimo->prox;
-            }
-            inicio = inicio->prox;
-            ultimo->prox = inicio;
-        }
-        while (aux->prox != inicio && aux->info != numero ) {
+        inicio = novo;
+    } else {
+        while (aux != NULL && aux->info < novo->info ){
             ant = aux;
             aux = aux->prox;
         }
-        if (aux->info == numero) {
-            ant->prox = aux->prox;
-            free(aux);
-        }
+        ant->prox = novo;
+        novo->prox = aux;
     }
+}
+
+void inverteLista() {
+    Elemento *ini2, *aux;
+
+    ini2 = inicio;
+    inicio = inicio->prox;
+    ini2->prox = NULL;
+    aux = inicio;
+    while(aux != NULL) {
+        inicio = inicio->prox;
+        aux->prox = ini2;
+        ini2 = aux;
+        aux = inicio;
+    }
+    inicio = ini2;
 }
 
 void escreve() {
     Elemento *aux = inicio;
     
     printf("\nLista:\n");
-    if(aux!=NULL) {
-        do{
-            printf("N: %d\n",aux->info);
-            aux = aux->prox;
-        } while(aux != inicio);
+    while(aux != NULL) {
+        printf("%d\n",aux->info);
+        aux = aux->prox;
     }
 }
 
 int main() {
     inicio = NULL;
 
-    insereCircular(1);
-    insereCircular(2);
-    insereCircular(3);
-    //insereCircular(4);
-    //insereCircular(5);
+    insereOrdenado(1);
+    insereOrdenado(2);
+    insereOrdenado(3);
+    insereOrdenado(4);
+    insereOrdenado(5);
     escreve();
-    removeCircular(5);
+
+    inverteLista();
     escreve();
 
     return 0;
