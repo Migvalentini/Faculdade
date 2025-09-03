@@ -31,15 +31,26 @@ void organizarLista() {
     Elemento *ant, *aux = inicio;
     
     printf("\n\n");
+    //printf("%d %d\n",aux->info, aux->prox->info);
+    //printf("%d - %d\n",inicio->info, aux->prox->info);
+    if(inicio == NULL || inicio->prox == NULL) {
+        return;
+    }
+
+    if(inicio->info < inicio->prox->info) {
+        inicio = inicio->prox;
+        inicio->info += aux->info;
+        ant = aux;
+        aux = aux->prox;
+        free(ant);
+    }
 
     while(aux != NULL && aux->prox != NULL) {
-        printf("%d %d\n",aux->info, aux->prox->info);
         if(aux->info < aux->prox->info) {
-            printf("%d - %d\n",inicio->info, aux->prox->info);
-            inicio = inicio->prox;
-            inicio->info = inicio->info + aux->info;
+            aux->prox->info += aux->info;
+            ant->prox = aux->prox;
             ant = aux;
-            //free(ant);
+            free(ant);
         }
         aux = aux->prox;
     }
@@ -66,8 +77,8 @@ int main() {
     escreve();
 
     organizarLista();
-    //escreve();
-    printf("\n%d", inicio->info);
+    escreve();
+    //printf("\n%d", inicio->info);
 
     return 0;
 }
