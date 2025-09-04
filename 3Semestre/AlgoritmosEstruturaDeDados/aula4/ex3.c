@@ -1,5 +1,5 @@
 //3)  Considere uma lista encadeada simples de números inteiros. 
-//Implementar uma operação que caso o valor de um nodo seja menor que o valor do seu seu próximo, deve somar os dois valores e colocar em um nodo só.
+//Implementar uma operação que caso o valor de um nodo seja menor que o valor do seu próximo, deve somar os dois valores e colocar em um nodo só.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,35 +27,6 @@ void insereFim(int numero) {
     }
 }
 
-void organizarLista() {
-    Elemento *ant, *aux = inicio;
-    
-    printf("\n\n");
-    //printf("%d %d\n",aux->info, aux->prox->info);
-    //printf("%d - %d\n",inicio->info, aux->prox->info);
-    if(inicio == NULL || inicio->prox == NULL) {
-        return;
-    }
-
-    if(inicio->info < inicio->prox->info) {
-        inicio = inicio->prox;
-        inicio->info += aux->info;
-        ant = aux;
-        aux = aux->prox;
-        free(ant);
-    }
-
-    while(aux != NULL && aux->prox != NULL) {
-        if(aux->info < aux->prox->info) {
-            aux->prox->info += aux->info;
-            ant->prox = aux->prox;
-            ant = aux;
-            free(ant);
-        }
-        aux = aux->prox;
-    }
-}
-
 void escreve() {
     Elemento *aux = inicio;
     
@@ -66,19 +37,46 @@ void escreve() {
     }
 }
 
+void organizarLista() {
+    Elemento *ant = inicio, *aux = inicio;
+    
+    if(inicio == NULL) {
+        return;
+    }
+
+    while (aux != NULL && aux->prox != NULL) {
+        if (aux->info < aux->prox->info) {
+            aux->prox->info += aux->info;
+            
+            if (aux == inicio) { 
+                inicio = aux->prox;
+                free(aux);
+                aux = inicio;
+            } else {
+                ant->prox = aux->prox;
+                free(aux);
+                aux = ant->prox;
+            }
+        } else {
+            ant = aux;
+            aux = aux->prox;
+        }
+    }
+}
+
 int main() {
     inicio = NULL;
 
-    insereFim(10);
-    insereFim(20);
+    insereFim(1);
+    insereFim(2);
     insereFim(5);
-    insereFim(8);
-    insereFim(3);
+    insereFim(20);
+    insereFim(50);
+
     escreve();
 
     organizarLista();
     escreve();
-    //printf("\n%d", inicio->info);
 
     return 0;
 }
