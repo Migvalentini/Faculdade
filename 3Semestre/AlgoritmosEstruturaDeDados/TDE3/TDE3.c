@@ -18,9 +18,8 @@ Elemento *inicio;
 void escreve() {
     Elemento *aux = inicio;
     
-    printf("\nLista:\n");
     while(aux != NULL) {
-        printf("%c\n",aux->c);
+        printf("%c",aux->c);
         aux = aux->prox;
     }
 }
@@ -31,20 +30,51 @@ void insere(char n) {
     novo->c = n;
     if(inicio == NULL) { //primeiro e único
         novo->prox = NULL;
+        novo->ant = NULL;
+        inicio = novo;
     } else { // insere
+        novo->c = n;
+        novo->ant = NULL;
         novo->prox = inicio;
+        inicio->ant = novo;
+        inicio = novo;
     }
-    inicio = novo;
+}
+
+void verificaPalindrome() {
+    Elemento *primeiro = inicio, *ultimo = inicio;
+    int num = 1, i, palindrome = 1;
+
+    while(ultimo->prox != NULL) {
+        ultimo = ultimo->prox;
+        num++;
+    }
+
+    for(i = 0; i < num / 2; i++) {
+        if(primeiro->c != ultimo->c) {
+            palindrome = 0;
+        }
+        primeiro = primeiro->prox;
+        ultimo = ultimo->ant;
+    }
+
+    if (palindrome == 1) {
+        printf("\nEh palindrome");
+    }
+    else {
+        printf("\nNao eh palindrome");
+    }
 }
 
 int main() {
     inicio = NULL;
 
-    insere('a');
-    insere('b');
-    insere('c');
+    insere('o');
+    insere('v');
+    insere('o');
 
     escreve();
+    verificaPalindrome();
 
     return 0;
 }

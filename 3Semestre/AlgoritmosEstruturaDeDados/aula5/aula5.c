@@ -19,7 +19,7 @@ void escreve() {
 }
 
 void inserePrimeiroUnico(int numero) {
-    Elemento *inicio, *novo;
+    Elemento *novo;
     
     novo = (Elemento*) malloc(sizeof(Elemento));
     novo->info = numero;
@@ -34,7 +34,8 @@ void inserePrimeiro(int numero) {
     novo = (Elemento*) malloc(sizeof(Elemento));
     novo->info = numero;
     novo->ant = NULL;
-    novo->prox = NULL;
+    novo->prox = inicio;
+    inicio->ant = novo;
     inicio = novo;
 }
 
