@@ -42,14 +42,27 @@ void escreve() {
 }
 
 void eliminarRepeticoes() {
-    Elemento *ant = inicio, *aux = inicio;
+    Elemento *aux = inicio, *ant = inicio;
     
-    if(inicio == NULL) {
+    if(inicio == NULL || inicio->prox == NULL) {
         return;
     }
 
     while (aux != NULL && aux->prox != NULL) {
-        
+        if (aux->info == aux->prox->info) {
+            if (aux == inicio) { 
+                inicio = aux->prox;
+                free(aux);
+                aux = inicio;
+            } else {
+                ant->prox = aux->prox;
+                free(aux);
+                aux = ant->prox;
+            }
+        } else {
+            ant = aux;
+            aux = aux->prox;
+        }
     }
 }
 
@@ -58,7 +71,10 @@ int main() {
 
     insereOrdenado(1);
     insereOrdenado(1);
+    insereOrdenado(1);
     insereOrdenado(2);
+    insereOrdenado(20);
+    insereOrdenado(20);
     insereOrdenado(2);
     insereOrdenado(3);
     insereOrdenado(5);
