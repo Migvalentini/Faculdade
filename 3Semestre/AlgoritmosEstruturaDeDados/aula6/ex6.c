@@ -1,0 +1,2 @@
+//Implemente o controle da operadora através da operação imprime(nroimpressora, trabalho). 
+//A operação imprime corresponde ao enfileira em uma impressora específica. Defina como seria o registro de cada impressão (nodo da lista).
