@@ -1,105 +1,105 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct elemento {
+struct element {
     int info;
-    struct elemento *prox;
-}; typedef struct elemento Elemento;
+    struct element *prox;
+}; typedef struct element Element;
 
-Elemento *pilha;
-Elemento *fila;
+Element *stack;
+Element *queue;
 
-void escrevePilha() {
-    Elemento *aux = pilha;
+void writeStack() {
+    Element *aux = stack;
     
-    printf("\nPilha:\n");
+    printf("\nStack:\n");
     while(aux != NULL) {
         printf("%d ",aux->info);
         aux = aux->prox;
     }
 }
 
-void escreveFila() {
-    Elemento *aux = fila;
+void writeQueue() {
+    Element *aux = queue;
     
-    printf("\nFila:\n");
+    printf("\nQueue:\n");
     while(aux != NULL) {
         printf("%d ",aux->info);
         aux = aux->prox;
     }
 }
 
-void empilhar(int numero) {
-    Elemento *novo;
-    novo = (Elemento*)malloc(sizeof(Elemento));
-    novo->info = numero;
-    if(pilha == NULL) { //primeiro e único
-        novo->prox = NULL;
-    } else { // insere
-        novo->prox = pilha;
+void push(int number) {
+    Element *new;
+    new = (Element*)malloc(sizeof(Element));
+    new->info = number;
+    if(stack == NULL) { //first and only
+        new->prox = NULL;
+    } else { // insert
+        new->prox = stack;
     }
-    pilha = novo;
+    stack = new;
 }
 
-void desempilhar() {
-    Elemento *aux=pilha;
-    pilha = pilha->prox;
+void pop() {
+    Element *aux=stack;
+    stack = stack->prox;
     free(aux);
 }
 
-void enfileirar(int numero) {
-    Elemento *novo;
-    novo = (Elemento*)malloc(sizeof(Elemento));
-    novo->info = numero;
-    if(fila == NULL) { //primeiro e único
-        novo->prox = NULL;
-    } else { // insere
-        novo->prox = fila;
+void enqueue(int number) {
+    Element *new;
+    new = (Element*)malloc(sizeof(Element));
+    new->info = number;
+    if(queue == NULL) { //first and only
+        new->prox = NULL;
+    } else { // insert
+        new->prox = queue;
     }
-    fila = novo;
+    queue = new;
 }
 
-void desenfileirar() {
-    Elemento *aux=fila, *ant=fila;
+void dequeue() {
+    Element *aux=queue, *prev=queue;
     while (aux->prox != NULL){
-        ant = aux;
+        prev = aux;
         aux = aux->prox;
     }
-    ant->prox = NULL;
+    prev->prox = NULL;
     free(aux);
 }
 
 int main() {
-    pilha = NULL;
-    fila = NULL;
+    stack = NULL;
+    queue = NULL;
 
-    empilhar(1);
-    empilhar(2);
-    empilhar(3);
-    empilhar(4);
-    escrevePilha();
+    push(1);
+    push(2);
+    push(3);
+    push(4);
+    writeStack();
 
-    desempilhar();
-    escrevePilha();
+    pop();
+    writeStack();
 
-    desempilhar();
-    desempilhar();
-    escrevePilha();
+    pop();
+    pop();
+    writeStack();
 
     printf("\n------------\n");
 
-    enfileirar(1);
-    enfileirar(2);
-    enfileirar(3);
-    enfileirar(4);
-    escreveFila();
+    enqueue(1);
+    enqueue(2);
+    enqueue(3);
+    enqueue(4);
+    writeQueue();
 
-    desenfileirar();
-    escreveFila();
+    dequeue();
+    writeQueue();
 
-    desenfileirar();
-    desenfileirar();
-    escreveFila();
+    dequeue();
+    dequeue();
+    writeQueue();
 
     return 0;
 }
