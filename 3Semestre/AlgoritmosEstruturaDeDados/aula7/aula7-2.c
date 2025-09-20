@@ -10,7 +10,7 @@ struct pilha {
 struct lista {
     int np;
     Pilha *topo;
-    struct Lista *prox;
+    struct lista *prox;
 }; typedef struct lista Lista;
 
 Lista *inicio;
@@ -33,11 +33,11 @@ void insereLista(int numero) {
     }
 }
 
-void empilha(int lista, int numero) {
+void empilha(int numerolista, int numero) {
     Lista *aux = inicio;
 
     while(aux != NULL) {
-        if(lista==aux->np) {
+        if(numerolista==aux->np) {
             Pilha *novo;
             novo = (Pilha*)malloc(sizeof(Pilha));
             novo->valor = numero;
@@ -58,9 +58,9 @@ void escreveListaPilhas() {
     Pilha *auxP;
 
     while(auxL != NULL) {
-        printf("%d:\n", auxL->np);
+        printf("\n%d: ", auxL->np);
         auxP = auxL->topo;
-        while(auxP->prox != NULL) {
+        while(auxP != NULL) {
             printf("%d ", auxP->valor);
             auxP = auxP->prox;
         }
@@ -76,7 +76,14 @@ int main() {
     insereLista(2);
     insereLista(3);
 
+    empilha(1, 10);
+    empilha(1, 20);
+    empilha(1, 30);
+    empilha(1, 40);
     empilha(2, 10);
+    empilha(3, 10);
+    empilha(3, 20);
+    empilha(3, 30);
 
     escreveListaPilhas();
 
