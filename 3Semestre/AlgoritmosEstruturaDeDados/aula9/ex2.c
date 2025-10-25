@@ -1,0 +1,1 @@
+//2) Implemente o mesmo método de ordenação simples, mas com a implementação clássica usando vetores.
