@@ -17,13 +17,21 @@ struct elemento {
 Elemento *inicio;
 
 void bubblesort() {
-    Elemento *aux = inicio, *au2 = inicio, *troca;
-    int flag = 0;
-    
-    while (aux->prox != NULL) {
-        while (aux2->prox != NULL) {
-            
+    Elemento *aux = inicio, *aux2 = inicio;
+    int troca = 0;
+
+    while (aux != NULL) {
+        while (aux2 != NULL) {
+            if(aux->info > aux2->info) {
+                troca = aux->info;
+                aux->info = aux2->info;
+                aux2->info = troca;
+            }
+
+            aux2 = aux2->prox;
         }   
+        aux = aux->prox;
+        aux2 = aux;
     }
 }
 
@@ -44,35 +52,23 @@ void escreve() {
     
     printf("\nLista:\n");
     while(aux != NULL) {
-        printf("%d\n",aux->info);
+        printf("%d ",aux->info);
         aux = aux->prox;
     }
 }
 
 int main() {
     inicio = NULL;
+    int i = 0;
 
-    insere(0);
-    insere(1);
-    insere(2);
-    insere(3);
-    insere(4);
-    insere(5);
-    insere(6);
-    insere(7);
-    insere(8);
-    insere(9);
-    insere(10);
-    insere(11);
-    insere(12);
-    insere(13);
-    insere(14);
-    insere(15);
-    insere(16);
-    insere(17);
-    insere(18);
-    insere(19);
-    insere(20);
+    for(i=0; i<=10000; i++) {
+        insere(i);
+    }
+
+    escreve();
+
+    bubblesort();
+
     escreve();
 
     return 0;
