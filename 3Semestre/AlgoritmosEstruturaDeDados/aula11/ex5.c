@@ -10,27 +10,21 @@ typedef struct noA {
     struct noA *dir;
 } TNoA;
 
-void posOrdem(TNoA* a) {
-  if (a != NULL){
-      posOrdem(a->esq);
-      posOrdem(a->dir);
-      printf("%d ",a->info);
-  }
-}
-
-void central(TNoA* a) {
-  if (a != NULL) {
-      central(a->esq);
-      printf("%d ",a->info);
-      central(a->dir);
-  }
-}
-
 void preordem(TNoA* a) {
   if (a != NULL) {
-      printf("%d ",a->info);
-      preordem(a->esq);
-      preordem(a->dir);
+    printf("%d ",a->info);
+    preordem(a->esq);
+    preordem(a->dir);
+  }
+}
+
+void escrevePai(TNoA* a, int valor, int pai) {
+  if (a != NULL) {
+    if(a->info == valor) {
+      printf("%d ", pai);
+    }
+    escrevePai(a->esq, valor, a->info);
+    escrevePai(a->dir, valor, a->info);
   }
 }
 
@@ -58,10 +52,7 @@ int main(void) {
 
   printf("Pre Ordem: \n");
   preordem(raiz);
-
-  printf("\nCentral: \n");
-  central(raiz);
-
-  printf("\nPos Ordem: \n");
-  posOrdem(raiz);
+  
+  printf("\nPai: \n");
+  escrevePai(raiz, 4, 0);
 };
