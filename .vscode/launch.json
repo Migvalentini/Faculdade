@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/mvalentini3/Documents/Faculdade/3Semestre/AlgoritmosEstruturaDeDados",
-      "program": "c:/Users/mvalentini3/Documents/Faculdade/3Semestre/AlgoritmosEstruturaDeDados/build/Debug/outDebug",
+      "cwd": "c:/Users/Miguel/Documents/Estudos/Faculdade/3Semestre/AlgoritmosEstruturaDeDados/trabalhos",
+      "program": "c:/Users/Miguel/Documents/Estudos/Faculdade/3Semestre/AlgoritmosEstruturaDeDados/trabalhos/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
